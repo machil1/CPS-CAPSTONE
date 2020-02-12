@@ -29,28 +29,30 @@ p {
 <!-- Search Bar -->
 <div class = "Search">
     <input type = "text" placeholder="Search..">
-    
-<!-- Tabs -->
-<div class = "dropdown">
-    <button onclick = "tabs" class = "dropbutton">Home</button>
-    <div id = "dropDown" class = "homeContent">
-        <a href = "#"></a>
+</div>  
+<!-- Tabs using href as a hyperlink to go to seperate page -->
+<div class = container>
+    <div class = "dropdown">
+        <button onclick = "tabs" class = "dropbutton">Home</button>
+        <div id = "dropDown" class = "homeContent">
+            <a href = "#"></a>
+        </div>
     </div>
-</div>
-<div class = "dropdown">
-    <button onclick = "tabs" class = "dropbutton">User Login</button>
-    <div id = "dropDown" class = "userContent">
-        <a href = "#">Applications</a>
-        <a href = "#">Update Information</a>
-        <a href = "#">Sign out</a>
+    <div class = "dropdown">
+        <button onclick = "tabs" class = "dropbutton">User Login</button>
+        <div id = "dropDown" class = "userContent">
+            <a href = "#">Applications</a>
+            <a href = "#">Update Information</a>
+            <a href = "#">Sign out</a>
+        </div>
     </div>
-</div>
-<div class = "dropdown">
-    <button onclick = "tabs" class = "dropbutton">Employer Login</button>
-    <div id = "dropDown" class = "employerContent">
-        <a href = "#">Applicants</a>
-        <a href = "#">Update Job Posting</a>
-        <a href = "#">Sign out</a>
+    <div class = "dropdown">
+        <button onclick = "tabs" class = "dropbutton">Employer Login</button>
+        <div id = "dropDown" class = "employerContent">
+            <a href = "#">Applicants</a>
+            <a href = "#">Update Job Posting</a>
+            <a href = "#">Sign out</a>
+        </div>
     </div>
 </div>
 
@@ -58,10 +60,15 @@ p {
 <style>
 
 /*Below here is CSS code for all three tabs */
-.dropbutton {
-        padding: 16px;
-        display: inline-block;
+.container {
 
+        padding: 16px;
+        float: left;
+    
+        
+
+        
+        
         
 
         
@@ -70,16 +77,27 @@ p {
 
 /*Below here is the CSS code for the User tab */
 
-.userContent {
+.userContent button{
     display:table-column-group;
     min-width: 160px;
+}
+.userContent button.active{
+    background-color: ivory;
+}
+.userContent {
+    display: none;
+    padding: 6px 12px;
 }
 
 /*Below here is the CSS code for the Employer tab */
 
-.employerContent {
+.employerContent button{
     display: none;
     min-width: 160px;
+
+}
+.employerContent{
+    display: none;
 }
 
 
