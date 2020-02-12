@@ -32,13 +32,13 @@ p {
     
 <!-- Tabs -->
 <div class = "dropdown">
-    <button onclick = "myFunction()" class = "dropbutton">Home</button>
+    <button onclick = "tabs" class = "dropbutton">Home</button>
     <div id = "dropDown" class = "homeContent">
         <a href = "#"></a>
     </div>
 </div>
 <div class = "dropdown">
-    <button onclick = "myFunction()" class = "dropbutton">User Login</button>
+    <button onclick = "tabs" class = "dropbutton">User Login</button>
     <div id = "dropDown" class = "userContent">
         <a href = "#">Applications</a>
         <a href = "#">Update Information</a>
@@ -46,7 +46,7 @@ p {
     </div>
 </div>
 <div class = "dropdown">
-    <button onclick = "myFunction()" class = "dropbutton">Employer Login</button>
+    <button onclick = "tabs" class = "dropbutton">Employer Login</button>
     <div id = "dropDown" class = "employerContent">
         <a href = "#">Applicants</a>
         <a href = "#">Update Job Posting</a>
@@ -61,6 +61,7 @@ p {
 .dropbutton {
         padding: 16px;
         display: inline-block;
+
         
 
         
@@ -70,7 +71,7 @@ p {
 /*Below here is the CSS code for the User tab */
 
 .userContent {
-    display: none;
+    display:table-column-group;
     min-width: 160px;
 }
 
