@@ -1,0 +1,139 @@
+<style>
+    .header {
+        width: auto;
+        padding: 40px 0;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin: auto;
+        height: 50px;
+        color: white;
+        background-color: black;
+        font-size: 42px;
+        font-family: 'Fauna One', serif;
+    }
+
+    /*.container {
+    width: auto; 
+    min-width: 225px;
+    height: fit-content;
+    background-color: darkgrey;    
+}*/
+    body {
+        background: darkgrey;
+    }
+
+    input[type=button] {
+        float: right;
+        background-color: grey;
+        border: 1px solid white;
+        font-family: 'Fauna One', serif;
+        font-Weight: bold;
+        font-size: 30px;
+        color: white;
+        width: 15%;
+    }
+
+    input[type=submit] {
+        float: center;
+        background-color: grey;
+        border: 1px solid white;
+        font-family: 'Fauna One', serif;
+        font-Weight: bold;
+        font-size: 20px;
+        color: white;
+        width: 15%;
+    }
+
+    .body {
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        right: -40px;
+        bottom: -40px;
+        width: auto;
+        height: auto;
+        background-size: cover;
+        z-index: 0;
+    }
+
+    #employee {
+        text-align: center;
+    }
+    #employer {
+        text-align: center;
+    }
+    #demployer {
+        text-align: center;
+    }
+
+    .box {
+
+        background-color: white;
+        width: 400px;
+        height: 200px;
+        display: inline-block;
+        border: 3px solid black;
+        font-family: 'Fauna One', serif;
+    }
+
+    .links {
+        width: auto;
+        text-align: center;
+        margin: auto;
+        height: 20px;
+        color: red;
+        font-size: 18px;
+        font-family: 'Fauna One', serif;
+    }
+</style>
+
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+
+</head>
+<div class='header'>
+    CyberHire
+    <input type="button" id="Button" value="Login" />
+</div>
+
+<div class ='links'>
+    <center>
+    <a href="#" id='Employee'>Employee Login</a> / 
+    <a href="#" id='Employer'>Employer Login</a>
+    </center>
+    <br>
+    <br>
+    <br>
+</div>
+
+<body>
+<script type="text/javascript" src="script.js"></script>
+
+    <div id="employee"> </div>
+
+    <div id="employer"> </div>
+    <div id="demployee">
+        <br><br><br><center>
+        <div class="box">
+            <br>
+                <h1>Employee Login</h1>
+                <div>
+                    <input type="text" class="textbox" id="txt_uname" name="txt_uname" placeholder="Username" />
+                </div>
+                <div>
+                    <input type="password" class="textbox" id="txt_pwd" name="txt_pwd" placeholder="Password" />
+                </div>
+                <div>
+                    <input type='submit' value="Login" name="but_submit" id="but_submit" />
+                </div>
+            </div>
+            </center>
+        </div>
+</body>
+
+</html>
