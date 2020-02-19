@@ -4,8 +4,9 @@
 <!-- Title and heading of website -->
 
 <head>
-
-<body style="background-color:white;">
+    <div style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQXrU3lpDu3X3SJSMN364F0VsUNuVsCZxy-gMOyJ9hs1DZmZXSi');">
+    <!--<body style="background-color: powderblue;">-->
+        
     <title>Cyber Hire</title>
     </head>
 
@@ -79,10 +80,10 @@
 
         <!-- Heading in HTML -->
         <h1>CyberHire</h1>
-
     </header>
 
     <body>
+
         <!-- Search Bar -->
         <div class="Search">
             <input type="text" placeholder="Search..">
@@ -97,7 +98,7 @@
                 text-align: left;
 
             }
-
+            /* CSS for Submit button */
             .Search button {
                 float: right;
                 width: 10%;
@@ -107,7 +108,8 @@
 
         <!-- Job Post 1 -->
         <div class="JobPosting1">
-            <p1>Data Analyst<br>
+            <p1><b>Data Analyst</b><br></p1>
+            <p2>
                 This job is for: Computer science, Math, or Engineering Majors<br>
                 <br>Job Description:<br>
                 • Provides strategic and tactical support to the organization by analyzing and interpreting the data to
@@ -120,18 +122,22 @@
                 • Collecting and collating appropriate data for usage in databases and conducting related research.<br>
                 • Discussing business intelligence needs or information with external clients and internal staff.<br>
                 • Participating in ongoing decisions concerning data collections, study design, methodology and data
-                analysis</p1>
+                analysis</p2>
             <button type="apply">Apply Now<i class="applyButton"></i></button>
 
-            <!-- CSS for Job Posting 1 -->
+
             <style>
+                /* CSS for Job Posting 1 */
                 .JobPosting1 {
                     border-style: solid;
                     text-align: center;
-                    height: 300px;
+                    height: 229px;
                     width: 100%;
                 }
-
+                .JobPosting1 p1 {
+                    font-size: 20px;
+                }
+                /*CSS for the Apply now button */
                 .JobPosting1 button {
                     float: right;
                     float: bottom;
@@ -141,7 +147,7 @@
 
         <!-- Job posting 2 -->
         <div class="JobPosting2">
-            <p1>Software Developer</p1><br>
+            <p1><b>Software Developer</b></p1><br>
             <p2>
                 This job is for: Computer Science, Math, and Engineering Majors<br>
                 <br>Responsibilities:<br>
@@ -164,20 +170,23 @@
             <button type="apply">Apply Now<i class="applyButton"></i></button>
 
             <style>
+                /* CSS for job posting 2 */
                 .JobPosting2 {
                     border-style: solid;
-                    height: 375px;
+                    height: 358px;
                     width: 100%;
                     text-align: center;
                 }
-
+                .JobPosting2 p1 {
+                    font-size: 20px;
+                }
+                /* CSS for Apply now button */
                 .JobPosting2 button {
                     float: right;
                     float: bottom;
                 }
             </style>
         </div>
-
         <!-- Job posting 3 -->
 
     </body>
