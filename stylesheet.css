@@ -1,0 +1,182 @@
+
+        /* CSS format for all tabs */
+        .title {
+            background-color: blue;
+        }
+        .Container {
+            position: relative;
+
+        }
+        /* CSS format for the Login button */
+        .dropbutton1 {
+            float: right;
+            width: 10%;
+            height: 41px;
+            padding: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+        /* The Header */
+         h1 {
+            text-align: left;
+            color: Black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 200%;
+        }
+        /* CSS for Search bar */
+
+        input[type=Search] {
+            width: 90%;
+            height: 41px;
+            text-align: left;
+
+        }
+        /* CSS for Submit button */
+        button[type=Enter] {
+            float: right;
+            width: 10%;
+            height: 41px;
+        }
+
+        /* CSS format for the pop-up */
+        mainform {
+            width: auto;
+            margin: 20px auto;
+            padding-top: 20px;
+            display: block;
+            z-index: 1000;
+        }
+
+        h2 {
+            margin-left: 65px;
+            text-shadow: 1px 0px 3px gray;
+        }
+
+        h3 {
+            font-size: 18px;
+            text-align: center;
+            text-shadow: 1px 0px 3px gray;
+        }
+
+        b {
+            font-size: 18px;
+            text-shadow: 1px 0px 3px gray;
+        }
+
+        #popup {
+            padding-top: 80px;
+            z-index: 1000;
+        }
+
+        .form {
+            border-radius: 2px;
+            padding: 20px 30px;
+            box-shadow: 0 0 15px;
+            font-size: 14px;
+            font-weight: bold;
+            width: 350px;
+            margin: 20px 250px 0 35px;
+            float: left;
+            z-index: 1000;
+        }
+
+        input[type=text] {
+            width: 100%;
+            height: 35px;
+            margin-top: 5px;
+            border: 1px solid black;
+            border-radius: 3px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        input[type=password] {
+            width: 100%;
+            height: 35px;
+            margin-top: 5px;
+            border: 1px solid black;
+            border-radius: 3px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        input[type=button] {
+            background-color:black;
+            border: 1px solid white;
+            font-family: 'Fauna One', serif;
+            font-Weight: bold;
+            font-size: 18px;
+            color: white;
+            width: 49%;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            margin-top: 5px;
+            border-radius: 3px;
+            padding: 5px;
+            resize: none;
+        }
+
+        #logindiv {
+            /*opacity: 0.92;*/
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            background: #000;
+            display: none;
+            z-index: 1100;
+        }
+
+        #login {
+            width: 350px;
+            margin: 0px;
+            background-color: darkgray;
+            font-family: 'Fauna One', serif;
+            position: relative;
+            border: 5px solid black;
+        }
+
+        #login {
+            left: 50%;
+            top: 50%;
+            margin-left: -210px;
+            margin-top: -158px;
+        }
+
+         /* CSS for Job Posting 1 */
+        .JobPosting1 {
+            border-style: solid;
+            text-align: center;
+            height: auto;
+            width: auto;
+        }
+
+        .JobPosting1 p1 {
+            font-size: 20px;
+            }
+
+        /*CSS for the Apply now button */
+        .JobPosting1 button {
+            height: auto;
+        }
+
+        /* CSS for job posting 2 */
+        .JobPosting2 {
+            border-style: solid;
+            height: auto;
+            width: auto;
+            text-align: center;
+        }
+
+        .JobPosting2 p1 {
+            font-size: 20px;
+        }
+
+        /* CSS for Apply now button */
+        .JobPosting2 button {
+             height: auto;
+        }
