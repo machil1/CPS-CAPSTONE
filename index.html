@@ -5,197 +5,369 @@
 
 <head>
     <!--<div style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQXrU3lpDu3X3SJSMN364F0VsUNuVsCZxy-gMOyJ9hs1DZmZXSi');">-->
-    <body style="background-color:powderblue;"></body>
-    <title style = "background-color: blue;"></title>
 
-    <title>Cyber Hire</title>
-    </head>
+<body style="background-color:powderblue;"></body>
+<title style="background-color: blue;"></title>
 
-    <!-- Below here is the Heading of the website CSS -->
-    <header>
-        <!-- The tabs -->
-        <div class=Container>
-            <div class="tab1">
-                <button onclick="tabs()" class="dropbutton1">Login</button>
-                <div id="dropCont" class="dropdownCont">
-                    <a href="#">Hi</a>
-                </div>
-            </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+
+<title>Cyber Hire</title>
+</head>
+
+<!-- Below here is the Heading of the website CSS -->
+<header>
+    <!-- The tabs -->
+    <div class=Container>
+        <div class="tab1">
+            <button onclick="popup()" class="dropbutton1">Login</button>
         </div>
+    </div>
+
+<style>
+        /* CSS format for all tabs */
+        .title {
+            background-color: blue;
+        }
+
+        .Container {
+            position: relative;
+
+        }
+
+        /* CSS format for the Login button */
+        .dropbutton1 {
+            float: right;
+            width: 10%;
+            height: 41px;
+            padding: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+    </style>
+
+    <script>
+
+        /* JavaScript code to open up drop down menu */
+        function tabs() {
+            document.getElementById("dropCont").classList.toggle("show");
+        }
+
+    </script>
+
+    <!-- The Header -->
+    <style>
+        h1 {
+            text-align: left;
+            color: Black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 200%;
+        }
+    </style>
+
+    <!-- Heading in HTML -->
+    <h1>CyberHire</h1>
+</header>
+
+<body>
+    <!-- Pop-up -->
+   <!-- <a href="#" onclick="popup()">Login To DB</a> -->
+    <div id="mainform">
+        <div id="logindiv">
+            <form class="form" action="#" id="login" method="POST">
+                <h3>User Login</h3>
+                <hr /><br />
+                <center><input type="text" id="username" placeholder="username" /><br />
+                    <br />
+                    <input type="password" id="password" placeholder="password" /><br /></center>
+                <br />
+                <input type="button" id="loginbtn" value="Login" />
+                <input type="button" id="cancel" value="Cancel" />
+                <br />
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="Search">
+        <input type="Search" placeholder="Search..">
+        <button type="Enter">Submit<i class="searchButton"></i></button>
+    </div>
+
+    <!-- CSS for Search bar -->
+    <style>
+        input[type=Search] {
+            width: 90%;
+            height: 41px;
+            text-align: left;
+
+        }
+        /* CSS for Submit button */
+        button[type=Enter] {
+            float: right;
+            width: 10%;
+            height: 41px;
+        }
+
+        /* CSS format for the pop-up */
+        mainform {
+            width: auto;
+            margin: 20px auto;
+            padding-top: 20px;
+            display: block;
+            z-index: 1000;
+        }
+
+        h2 {
+            margin-left: 65px;
+            text-shadow: 1px 0px 3px gray;
+        }
+
+        h3 {
+            font-size: 18px;
+            text-align: center;
+            text-shadow: 1px 0px 3px gray;
+        }
+
+        b {
+            font-size: 18px;
+            text-shadow: 1px 0px 3px gray;
+        }
+
+        #popup {
+            padding-top: 80px;
+            z-index: 1000;
+        }
+
+        .form {
+            border-radius: 2px;
+            padding: 20px 30px;
+            box-shadow: 0 0 15px;
+            font-size: 14px;
+            font-weight: bold;
+            width: 350px;
+            margin: 20px 250px 0 35px;
+            float: left;
+            z-index: 1000;
+        }
+
+        input[type=text] {
+            width: 100%;
+            height: 35px;
+            margin-top: 5px;
+            border: 1px solid black;
+            border-radius: 3px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        input[type=password] {
+            width: 100%;
+            height: 35px;
+            margin-top: 5px;
+            border: 1px solid black;
+            border-radius: 3px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        input[type=button] {
+            background-color:black;
+            border: 1px solid white;
+            font-family: 'Fauna One', serif;
+            font-Weight: bold;
+            font-size: 18px;
+            color: white;
+            width: 49%;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            margin-top: 5px;
+            border-radius: 3px;
+            padding: 5px;
+            resize: none;
+        }
+
+        #logindiv {
+            /*opacity: 0.92;*/
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            background: #000;
+            display: none;
+            z-index: 1100;
+        }
+
+        #login {
+            width: 350px;
+            margin: 0px;
+            background-color: darkgray;
+            font-family: 'Fauna One', serif;
+            position: relative;
+            border: 5px solid black;
+        }
+
+        #login {
+            left: 50%;
+            top: 50%;
+            margin-left: -210px;
+            margin-top: -158px;
+        }
+    </style>
+
+    <script>
+
+        /* Code to open show pop-up messgage */
+        function popup() {
+            $("#logindiv").css("display", "block");
+            $("#password").attr("placeholder", "password").val("").blur();
+            $("#username").attr("placeholder", "username").val("").blur();
+        }
+
+        $(document).ready(function () {
+
+            $("#cancel").click(function () {
+                $(this).parent().parent().hide();
+                document.getElementById("message2").innerHTML = "User Pressed Cancel";
+            });
+
+            $("#loginbtn").click(function () {
+                $(this).parent().parent().hide();
+                var username = $("#username").val().trim();
+                var password = $("#password").val().trim();
+
+                if (username != "" && password != "") {
+                    $.ajax({
+                        url: 'UserLogin.php',
+                        type: 'post',
+                        dataType: 'json',
+                        data: { username: username, password: password },
+                        success: function (response) {
+                            name = response;
+                            var msg = "";
+                            var msg1 = "";
+                            var msg2 = "";
+                            if (response == 2) {
+                                alert("Please Logout First")
+                            }
+                            else if (response != 0) {
+                                name = response[0];
+                                avgWageAvgUser = response[1];
+                                ePopAvgUser = response[2];
+                                msg1 = "Welcome, " + name;
+                                $("#welcome").html(msg1);
+                                document.getElementById("message2").innerHTML = "";
+                                $("#password").attr("placeholder", "password").val("").blur();
+                            }
+                            else {
+                                msg = "Invalid Username and Password!";
+                                $("#message2").html(msg);
+                                $("#password").attr("placeholder", "password").val("").blur();
+                            }
+                        }
+                    });
+                }
+                else {
+                    msg2 = "Username or Password required!";
+                    $("#message2").html(msg2);
+                }
+            });
+
+        });
+
+    </script>
+
+    <!-- Job Post 1 -->
+    <div class="JobPosting1">
+        <p1><b>Data Analyst</b><br></p1>
+        <p2>
+            This job is for: Computer science, Math, or Engineering Majors<br>
+            <br>Job Description:<br>
+            • Provides strategic and tactical support to the organization by analyzing and interpreting the data to
+            provide creative solutions.<br>
+            • Performs data analysis with regard to client requests and develops rules and methodologies for
+            effective data management.<br>
+            <br>Duties and Responsibilities:<br>
+            • Assuring the integrity of project data, including data extraction, storage, manipulation, processing
+            and analysis.<br>
+            • Collecting and collating appropriate data for usage in databases and conducting related research.<br>
+            • Discussing business intelligence needs or information with external clients and internal staff.<br>
+            • Participating in ongoing decisions concerning data collections, study design, methodology and data
+            analysis</p2>
+        <button type="apply">See More<i class="applyButton"></i></button>
 
         <style>
-            /* CSS format for all tabs */
-            .title {
-                background-color: blue;
-            }
-            .container {
-                position: relative;
-                display: inline-block;
-            }
-
-            /* CSS format for the drop button */
-            .dropbutton1 {
-                float: right;
-                width: 10%;
-                height: 41px;
-                padding: 10px;
-                cursor: pointer;
-                position: relative;
+            /* CSS for Job Posting 1 */
+            .JobPosting1 {
+                border-style: solid;
+                text-align: center;
+                height: auto;
+                width: auto;
             }
 
-            .dropdownCont {
-                display: none;
-                position: absolute;
-                background-color: white;
-                min-width: 10%;
-                right: 0;
+            .JobPosting1 p1 {
+                font-size: 20px;
             }
 
-            .dropdownCont a {
-                color: black;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-            }
-
-            .show {
-                display: block;
+            /*CSS for the Apply now button */
+            .JobPosting1 button {
+                height: auto;
             }
         </style>
+    </div>
 
-        <script>
+    <!-- Job posting 2 -->
+    <div class="JobPosting2">
+        <p1><b>Software Developer</b></p1><br>
+        <p2>
+            This job is for: Computer Science, Math, and Engineering Majors<br>
+            <br>Responsibilities:<br>
+            • Develop, create, and modify general computer application software or specialized programs<br>
+            • Analyze user needs and develop software solutions<br>
+            • Design or customize software for client use to optimize operational efficiency<br>
+            • Improve existing systems by analyzing areas of modification<br>
+            • Analyze and design databases with application areas<br>
+            • Coordinate database development with a team or individually<br>
+            • Maintain systems by monitoring, identifying, and correcting software defects<br>
+            • Create technical specifications and test plans<br>
+            • Update knowledge and skills regularly through in-house and external courses, manuals, and new
+            applications<br>
+            <br>Requirements:<br>
+            • Knowledge of basic computer science concepts, programming, and Information Systems <br>
+            • Interest and willingness to travel and relocate <br>
+            • Previous experience in Java/J2EE Development, C++/C#, .NET, VB/ASP Development and Database experience
+            is preferred <br>
+        </p2>
+        <button type="apply">See More<i class="applyButton"></i></button>
 
-            /* JavaScript code to open up drop down menu */
-            function tabs() {
-                document.getElementById("dropCont").classList.toggle("show");
-            }
-
-        </script>
-
-        <!-- The Header -->
         <style>
-            h1 {
-                text-align: left;
-                color: Black;
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 200%;
+            /* CSS for job posting 2 */
+            .JobPosting2 {
+                border-style: solid;
+                height: auto;
+                width: auto;
+                text-align: center;
+            }
+
+            .JobPosting2 p1 {
+                font-size: 20px;
+            }
+
+            /* CSS for Apply now button */
+            .JobPosting2 button {
+
+                height: auto;
             }
         </style>
+    </div>
 
-        <!-- Heading in HTML -->
-        <h1>CyberHire</h1>
-    </header>
-
-    <body>
-
-        <!-- Search Bar -->
-        <div class="Search">
-            <input type="text" placeholder="Search..">
-            <button type="submit">Submit<i class="searchButton"></i></button>
-        </div>
-
-        <!-- CSS for Search bar -->
-        <style>
-            .Search input {
-                width: 89.4%;
-                height: 35px;
-                text-align: left;
-
-            }
-            /* CSS for Submit button */
-            .Search button {
-                float: right;
-                width: 10%;
-                height: 41px;
-            }
-        </style>
-
-        <!-- Job Post 1 -->
-        <div class="JobPosting1">
-            <p1><b>Data Analyst</b><br></p1>
-            <p2>
-                This job is for: Computer science, Math, or Engineering Majors<br>
-                <br>Job Description:<br>
-                • Provides strategic and tactical support to the organization by analyzing and interpreting the data to
-                provide creative solutions.<br>
-                • Performs data analysis with regard to client requests and develops rules and methodologies for
-                effective data management.<br>
-                <br>Duties and Responsibilities:<br>
-                • Assuring the integrity of project data, including data extraction, storage, manipulation, processing
-                and analysis.<br>
-                • Collecting and collating appropriate data for usage in databases and conducting related research.<br>
-                • Discussing business intelligence needs or information with external clients and internal staff.<br>
-                • Participating in ongoing decisions concerning data collections, study design, methodology and data
-                analysis</p2>
-            <button type="apply">See More<i class="applyButton"></i></button>
-
-
-            <style>
-                /* CSS for Job Posting 1 */
-                .JobPosting1 {
-                    border-style: solid;
-                    text-align: center;
-                    height: auto;
-                    width: auto;
-                }
-                .JobPosting1 p1 {
-                    font-size: 20px;
-                }
-                /*CSS for the Apply now button */
-                .JobPosting1 button {
-                    
-                    float: right;
-                    float: bottom;
-                    height: auto;
-                }
-            </style>
-        </div>
-
-        <!-- Job posting 2 -->
-        <div class="JobPosting2">
-            <p1><b>Software Developer</b></p1><br>
-            <p2>
-                This job is for: Computer Science, Math, and Engineering Majors<br>
-                <br>Responsibilities:<br>
-                • Develop, create, and modify general computer application software or specialized programs<br>
-                • Analyze user needs and develop software solutions<br>
-                • Design or customize software for client use to optimize operational efficiency<br>
-                • Improve existing systems by analyzing areas of modification<br>
-                • Analyze and design databases with application areas<br>
-                • Coordinate database development with a team or individually<br>
-                • Maintain systems by monitoring, identifying, and correcting software defects<br>
-                • Create technical specifications and test plans<br>
-                • Update knowledge and skills regularly through in-house and external courses, manuals, and new
-                applications<br>
-                <br>Requirements:<br>
-                • Knowledge of basic computer science concepts, programming, and Information Systems <br>
-                • Interest and willingness to travel and relocate <br>
-                • Previous experience in Java/J2EE Development, C++/C#, .NET, VB/ASP Development and Database experience
-                is preferred <br>
-            </p2>
-            <button type="apply">See More<i class="applyButton"></i></button>
-
-            <style>
-                /* CSS for job posting 2 */
-                .JobPosting2 {
-                    border-style: solid;
-                    height: auto;
-                    width: auto;
-                    text-align: center;
-                }
-                .JobPosting2 p1 {
-                    font-size: 20px;
-                }
-                /* CSS for Apply now button */
-                .JobPosting2 button {
-                    float: right;
-                    float: bottom;
-                }
-            </style>
-        </div>
-
-        <!-- Script for when referencing see more-->
-        <script>
+    <!-- Script for when referencing see more-->
+    <script>
         //if See more is pressed and login == true
             //reference the webpage for that job specifically
             //make webpage for that job to show job description/requirements/and responsibilities
@@ -204,9 +376,9 @@
                     //reference to application page to fill out for that job
                 //else reference to login page
                 //if user doesnt have a account reference sign up page 
-        </script>
-        <!-- Job posting 3 -->
+    </script>
+    <!-- Job posting 3 -->
 
-    </body>
+</body>
 
 </html>
