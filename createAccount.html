@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheetADD.css">
+</head>
+
+<div class='header'>
+  CyberHire
+  <input type="button" id="Button" value="Login" />
+</div>
+
+<body>
+
+  <form action="/action_page.php">
+    <div class="container">
+      <center>
+        <h1>Create Account</h1>
+        <br>
+        <label>Check if account is:</label>
+        <label>
+          <input type="checkbox" checked="checked" name="Employee" style="margin-bottom:15px">Employee
+
+          <input type="checkbox" name="Employer" style="margin-bottom:15px">Employer
+        </label>
+
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+
+        <label for="email"><b>Email</b></label><br>
+        <input type="text" placeholder="Enter Email" name="email" required><br>
+
+        <label for="psw"><b>Password</b></label><br>
+        <input type="password" placeholder="Enter Password" name="psw" required><br>
+
+        <label for="psw-repeat"><b>Repeat Password</b></label><br>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" required><br>
+
+        <label for="phone"><b>Phone Number</b></label><br>
+        <input type="text" placeholder="Phone Number" name="phoneNum" required><br>
+
+
+        <p>By creating an account you agree to our <a href="#" style="color:rgb(255, 30, 30)">Terms & Privacy</a>.</p>
+
+        <div class="clearfix">
+          <!--<button type="button" class="cancelbtn">Cancel</button>-->
+          <button type="submit" class="signupbtn">Sign Up</button>
+      </center>
+    </div>
+    </div>
+  </form>
+
+</body>
+
+</html>
