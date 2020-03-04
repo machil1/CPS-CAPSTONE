@@ -1,4 +1,5 @@
 
+        
         /* CSS format for all tabs */
         .title {
             background-color: blue;
@@ -109,6 +110,16 @@
             color: white;
             width: 49%;
         }
+        input[type = button][id = create]
+        {
+            background-color:black;
+            border: 1px solid white;
+            font-family: 'Fauna One', serif;
+            font-Weight: bold;
+            font-size: 18px;
+            color: white;
+            width: 99%;
+        }
 
         textarea {
             width: 100%;
@@ -159,10 +170,17 @@
             font-size: 20px;
             }
 
-        /*CSS for the Apply now button */
+        /* CSS for See full desription button */
         .JobPosting1 button {
-            height: auto;
+            float:center;
+            
         }
+        /*CSS for the read more button for jobs 1-5*/
+        #more1 {display: none;}
+        #more2 {display: none;}
+        #more3 {display: none;}
+        #more4 {display: none;}
+        #more5 {display: none;}
 
         /* CSS for job posting 2 */
         .JobPosting2 {
@@ -176,7 +194,78 @@
             font-size: 20px;
         }
 
-        /* CSS for Apply now button */
+        /* CSS for See more button */
         .JobPosting2 button {
              height: auto;
+             float:center;
+        }
+         /* CSS for job posting 3 */
+         .JobPosting3 {
+            border-style: solid;
+            height: auto;
+            width: auto;
+            text-align: center;
+        }
+
+        .JobPosting3 p1 {
+            font-size: 20px;
+        }
+
+        /* CSS for See more button */
+        .JobPosting3 button {
+             height: auto;
+             float:center;
+        }
+        /* CSS for job posting 4 */
+        .JobPosting4 {
+            border-style: solid;
+            height: auto;
+            width: auto;
+            text-align: center;
+        }
+
+        .JobPosting4 p1 {
+            font-size: 20px;
+        }
+
+        /* CSS for See more button */
+        .JobPosting4 button {
+             height: auto;
+             float:center;
+        }
+        /* CSS for job posting 5 */
+        .JobPosting5 {
+            border-style: solid;
+            height: auto;
+            width: auto;
+            text-align: center;
+        }
+
+        .JobPosting5 p1 {
+            font-size: 20px;
+        }
+
+        /* CSS for See more button */
+        .JobPosting5 button {
+             height: auto;
+             float:center;
+        }
+        /* Code for Data analyst page */
+        .headData {
+            text-align: center;
+            color: Black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 100%;
+        }
+        .DataAnalyst {
+            border-style: solid;
+            height: auto;
+            width: auto;
+            text-align: center;
+        }
+        .applyNow{
+            float:right;
+        }
+        .goBack{
+            float:right;
         }
