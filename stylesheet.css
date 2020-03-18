@@ -1,5 +1,4 @@
 
-        
         /* CSS format for all tabs */
         .title {
             background-color: blue;
@@ -263,9 +262,35 @@
             width: auto;
             text-align: center;
         }
+        .SoftwareDeveloper{
+            border-style: solid;
+            height: auto;
+            width: auto;
+            text-align: center;
+        }
+        .SeniorJavaDeveloper{
+            border-style: solid;
+            height: auto;
+            width: auto;
+            text-align: center;
+        }
+        .TechnologyDevelopment{
+            border-style: solid;
+            height: auto;
+            width: auto;
+            text-align: center;
+        }
+        .SoftwareEngineer{
+            border-style: solid;
+            height: auto;
+            width: auto;
+            text-align: center;
+        }
         .applyNow{
             float:right;
         }
         .goBack{
             float:right;
         }
+
+
