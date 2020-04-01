@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .btn,.button{
+        border:none;
+        display:inline-block;
+        padding:8px 16px;
+        vertical-align:middle;
+        overflow:hidden;
+        text-decoration:none;
+        color:black;
+        background-color:#00ff7c;
+        text-align:center;
+        cursor:pointer;
+        white-space:nowrap
+    }
+    div.divis {
+        background-color: #ccc;
+        padding-left: 15px;
+        padding-right: 15px;
+        height: 300px;
+        overflow: scroll;
+    }
+</style>
+<head>
+
+<body style="background-color: whitesmoke;"></body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheet.css"></script>
+<script type="text/javascript" src="functions.js"></script>
+
+<title>Employee Account</title>
+
+</head>
+
+<header>
+</header>
+
+<body>
+    <div class="topnav">
+        <a class="logo" href="#returnHome"><img src ="CyberHire_Logos_Reverse.png" height="38" width="158"></a>
+        <a href="#title1">Look for a Job</a>
+        <a href="#title2">Upload Resume</a>
+        <a href="#title3">Resume List</a>
+        <a href="#title4">Messages</a>
+        <b href="#userIntro">Welcome, User/TODO</a>
+    </div>
+    <p>This is not displayed</p>
+    <p>This is the user picture</p>
+    <img src="Profile Image.jpg" alt="User Picture" width = "100" height = "100">
+    <p>Username: alexUsername <button class = "button">Change Username</button></p>
+    <p>Name: Alexandre Almeida <button class = "button">Change Name</button></p>
+    <p>e-mail: almeida1@kean.edu  <button class = "button">Change e-mail</button></p>
+    <hr>
+    <h1>Messages</h1>
+    <div class = "divis">
+        <h2>Message 1</h2>
+        <p>Random nosadjsdjhasjdjkashdj asjdhkjashdlaskjhdjkasdkj askjdkjashkj jkdaskjdh shd nosadjsdjhasjdjkashdj asjdhkjashdlaskjhdjkasdkj askjdkjashkj jkdaskjdh shdnosadjsdjhasjdjkashdj asjdhkjashdlaskjhdjkasdkj askjdkjashkj jkdaskjdh shd</p>
+        <p><button class = "button">Respond</button> <button class = "button">Delete</button></p>
+        <hr>
+        <h2>Message 2</h2>
+        <p>sajdhajsdh asjdaskjdhjaskdkjas dkjasdkj hghjagds</p>
+        <p><button class = "button">Respond</button> <button class = "button">Delete</button></p>
+        <hr>
+        <h2>Message 3</h2>
+        <p>sajdhajsdh asjdaskjdhjaskdkjas dkjasdkj hghjagds</p>
+        <p><button class = "button">Respond</button> <button class = "button">Delete</button></p>
+        <hr>
+        <h2>Message 4</h2>
+        <p>sajdhajsdh asjdaskjdhjaskdkjas dkjasdkj hghjagds</p>
+        <p><button class = "button">Respond</button> <button class = "button">Delete</button></p>
+    </div>
+    <hr>
+    <h1>Resume Uploads <button class = "button">Add</button></h1>
+    <div class = "divis">
+        <h2>Resume 1</h2>
+        <p>Random nosadjsdjhasjdjkashdj asjdhkjashdlaskjhdjkasdkj askjdkjashkj jkdaskjdh shd </p>
+        <button class = "button">Delete</button>
+        <hr>
+        <h2>Resume 2</h2>
+        <p>sajdhajsdh asjdaskjdhjaskdkjas dkjasdkj hghjagds</p>
+        <button class = "button">Delete</button>
+        <hr>
+        <h2>Resume 3</h2>
+        <p>sajdhajsdh asjdaskjdhjaskdkjas dkjasdkj hghjagds</p>
+        <button class = "button">Delete</button>
+        <hr>
+        <h2>Resume 4</h2>
+        <p>sajdhajsdh asjdaskjdhjaskdkjas dkjasdkj hghjagds</p>
+        <button class = "button">Delete</button>
+    </div>
+    <hr>
+    <h1>Sent Resumes</h1>
+    <div class = "divis">
+        <h2>Resume 1</h2>
+        <p>Sent: CompanyName1</p>
+        <p>Date: March 20, 2020</p>
+        <p>Status: Waiting</p>
+        <button class = "button">Delete</button>
+        <hr>
+        <h2>Resume 1</h2>
+        <p>Sent: CompanyName2</p>
+        <p>Date: March 22, 2020</p>
+        <p>Status: Accepted</p>
+        <button class = "button">View</button>
+        <hr>
+        <h2>Resume 2</h2>
+        <p>Sent: CompanyName3</p>
+        <p>Date: January 10, 2020</p>
+        <p>Status: Denied</p>
+        <button class = "button">Delete</button>
+    </div>
+</html>
