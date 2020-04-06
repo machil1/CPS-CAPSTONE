@@ -1,58 +1,98 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="stylesheetADD.css">
+  <!--<link rel="stylesheet" type="text/css" href="stylesheetADD.css">-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+<header>
 
-<div class='header'>
-  CyberHire
-  <input type="button" id="Button" value="Login" />
- <input type = "button" onClick = "location.href = 'index.html'" value = "Go Back"/>
-
+<div class='page-header'>
+  <!--<div class='header'>-->
+  <h1 class="logo">CyberHire
+  <script type="text/javascript" src="functions.js"></script>
+  <!--<button onclick="popup()" class="dropbutton1">Login</button>-->
+  <div class="float-right">
+  <button type="button" onclick="popup()" class="btn btn-info">Login</button>
+  </div>
+<!--</div>-->
+</h1>
 </div>
+</header>
 
+<a href="index.html">Home page</a>
 
 <body>
-
-  <form action="/action_page.php">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <div id="mainform">
+        <div id="logindiv">
+            <form class="form" action="#" id="login" method="POST">
+                <h3>Account Login</h3>
+                <hr /><br />
+                <center><input type="text" id="username" placeholder="email address" /><br />
+                    <br />
+                    <input type="password" id="password" placeholder="password" /><br /></center>
+                <br />
+                <input type="button" id="loginbtn" value="Login" />
+                <input type="button" id="cancel" value="Cancel" /> 
+                <br>
+                <input type="button" onClick ="location.href = 'createAccount.html'" id="create" class="create" value="Create Account" </input> <br />
+            </form>
+        </div>
+    </div>  
+  
+  
+  <script type="text/javascript" src="script.js"></script>
+  <form method="POST">
+   
     <div class="container">
       <center>
-        <h1>Create Account</h1>
+        <label for ="Account"><b>Create Account</b></label><br>
         <br>
         <label>Check if account is:</label>
         <label>
-          <input type="checkbox" checked="checked" name="Employee" style="margin-bottom:15px">Employee
+          <div id="radioBTN">
+          <input type="radio" name="emptype" value="EmpChck" checked>Employee
 
-          <input type="checkbox" name="Employer" style="margin-bottom:15px">Employer
+          <input type="radio" name="emptype" value ="EmprChck">Employer
+          </div>
         </label>
-
+        <div id="account">
         <p>Please fill in this form to create an account.</p>
         <hr>
+        <label for ="FName"><b>First Name</b></label><br>
+        <input type="text" placeholder="First Name" name="FName" id="FName" class="createA" required><br>
+
+        <label for ="LName"><b>Last Name</b></label><br>
+        <input type="text" placeholder="Last Name" name="LName" id="LName" class="createA" required><br>
 
         <label for="email"><b>Email</b></label><br>
-        <input type="text" placeholder="Enter Email" name="email" required><br>
+        <input type="text" placeholder="Enter Email" name="email" id="email" class="createA" required><br>
 
         <label for="psw"><b>Password</b></label><br>
-        <input type="password" placeholder="Enter Password" name="psw" required><br>
+        <input type="password" placeholder="Enter Password" name="password" id="c-password" class="psd" required><br>
 
         <label for="psw-repeat"><b>Repeat Password</b></label><br>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" required><br>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" class="psd" required><br>
 
         <label for="phone"><b>Phone Number</b></label><br>
-        <input type="text" placeholder="Phone Number" name="phoneNum" required><br>
+        <input type="text" placeholder="Phone Number" name="phoneNum" id="phoneNum" class="createA" required><br>
 
-
+        </div>
         <p>By creating an account you agree to our <a href="#" style="color:rgb(255, 30, 30)">Terms & Privacy</a>.</p>
-
         <div class="clearfix">
           <!--<button type="button" class="cancelbtn">Cancel</button>-->
-          <button type="submit" class="signupbtn">Sign Up</button>
+          <button type="submit" id="signupbtn" class="btn btn-info">Sign Up</button>
       </center>
-    </div>
-    </div>
+      </div>
   </form>
+
+  <div id="employee"></div>
+  <div id="employer"></div>
 
 </body>
 
