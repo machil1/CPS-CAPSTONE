@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Title and heading of website -->
+
+<head>
+
+<body style="background-color:powderblue;"></body>
+<title style="background-color: blue;"></title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">-->
+</script>
+<script type="text/javascript" src="functions.js"></script>
+<!--<script type="text/javascript" src="script.js"></script>-->
+
+
+<title>Cyber Hire</title>
+
+</head>
+
+<!-- Below here is the Heading of the website CSS -->
+<header>
+
+    <!-- The tabs -->
+    <div class=Container>
+        <div class="tab1">
+            <button onclick="popup()" class="dropbutton1">Login</button>
+            <button onclick="location.href = 'EmployeeAccount.html'" class="dropbutton1">Employee</button>
+            <button onclick="location.href = 'EmployerAccount.html'" class="dropbutton1">Employer</button>
+
+        </div>
+    </div>
+
+    <!-- Heading in HTML -->
+    <h1>CyberHire</h1>
+
+</header>
+
+<body>
+    <!-- Pop-up -->
+    <div id="mainform">
+        <div id="logindiv">
+            <form class="form" action="#" id="login" method="POST">
+                <h3>User Login</h3>
+                <hr /><br />
+                <center><input type="text" id="username" placeholder="username" /><br />
+                    <br />
+                    <input type="password" id="password" placeholder="password" /><br /></center>
+                <br />
+                <input type="button" id="loginbtn" value="Login" />
+                <input type="button" id="cancel" value="Cancel" />
+                <br>
+                <input type="button" onClick="location.href = 'createAccount.html'" id="create" value="Create Account"
+                    </input> <br />
+            </form>
+        </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="Search">
+        <input type="Search" placeholder="Search..">
+        <button type="Enter">Submit<i class="searchButton"></i></button>
+    </div>
+
+    <!-- Job Post 1 -->
+    <div class="JobPosting1">
+        <p1><b>Data Analyst</b><br></p1>
+        <p2>
+            This job is for: Computer science, Math, or Engineering Majors<br>
+            <br><b>Job Description:</b><br>
+            Provides strategic and tactical support to the organization by analyzing and interpreting the data to
+            provide creative solutions.<br>
+            Performs data analysis with regard to client requests and develops rules and methodologies for
+            effective data management.<br><span id="dots1">...</span><span id="more1">
+                <br><b>Responsibilities and Requirements:</b><br>
+                Assuring the integrity of project data, including data extraction, storage, manipulation, processing
+                and analysis.<br>
+                Collecting and collating appropriate data for usage in databases and conducting related research.<br>
+                Discussing business intelligence needs or information with external clients and internal staff.<br>
+                Participating in ongoing decisions concerning data collections, study design, methodology and data
+                analysis</span><br></p2>
+        <button type="seeMore" onClick="location.href = 'dataAnalyst.html'">See full Description</input>
+            <button onclick="Job1()" id="myBtn1">Read more</button>
+    </div>
+
+    <!-- Job posting 2 -->
+    <div class="JobPosting2">
+        <p1><b>Software Developer</b></p1><br>
+        <p2>
+            This job is for: Computer Science, Math, and Engineering Majors<br>
+            <br><b>Job Description:</b><br>
+            Develop, create, and modify general computer application software or specialized programs<br>
+            Analyze user needs and develop software solutions<br>
+            Design or customize software for client use to optimize operational efficiency<br><span
+                id="dots2">...</span><span id="more2">
+                Improve existing systems by analyzing areas of modification<br>
+                Analyze and design databases with application areas<br>
+                Coordinate database development with a team or individually<br>
+                Maintain systems by monitoring, identifying, and correcting software defects<br>
+                Create technical specifications and test plans<br>
+                Update knowledge and skills regularly through in-house and external courses, manuals, and new
+                applications<br>
+                <br><b>Responsibilities and Requirements:</b><br>
+                Knowledge of basic computer science concepts, programming, and Information Systems <br>
+                Interest and willingness to travel and relocate <br>
+                Previous experience in Java/J2EE Development, C++/C#, .NET, VB/ASP Development and Database experience
+                is preferred <br>
+            </span><br></p2>
+        <button type="seeMore" onClick="location.href = 'softwareDeveloper.html'">See full Description</input>
+            <button onclick="Job2()" id="myBtn2">Read more</button>
+    </div>
+
+    <!-- Script for when referencing see more-->
+    <script>
+        //if See more is pressed
+            //reference the webpage for that job specifically
+            //make webpage for that job to show job description/requirements/and responsibilities
+            //apply now at the bottom of the page
+                //if apply now is pressed and login == true
+                    //reference to application page to fill out for that job
+                //else reference to login page
+                //if user doesnt have a account reference sign up page 
+    </script>
+
+    <!-- Job posting 3 -->
+    <div class="JobPosting3">
+        <p1><b>Senior Java Developer</b><br></p1>
+        <p2>
+            This job is for: Computer science, Math, or Engineering Majors<br>
+            <br><b>Job Description:</b><br>
+            Skilled and experienced Java software developer.<br>
+            Knowledge of embedded Java software development, sensors, and robotics a plus.<br>
+            Skilled and experienced object-oriented software professional.
+            <br><span id="dots3">...</span><span id="more3">
+                <br><b>Responsibilities and Requirements:</b><br>
+                Extensive knowledge, skill, and experience with programming in Java.<br>
+                Knowledge of Java SE libraries.<br>
+                Object-oriented Java programming skill.<br>
+                Skill in reuse of, extension of, and refactoring of software.<br>
+                Documentation and JavaDoc of code.<br>
+                Debugging and performance profiling skills.<br>
+                Bachelors Degree minimum and at least five years of Java required
+            </span><br></p2>
+        <button type="seeMore" onClick="location.href = 'SeniorJavaDeveloper.html'">See full Description</input>
+            <button onclick="Job3()" id="myBtn3">Read more</button>
+
+    </div>
+
+    <!-- Job posting 4 -->
+    <div class="JobPosting4">
+        <p1><b>Technology Development Program</b><br></p1>
+        <p2>
+            This job is for: Computer science, Math, or Engineering Majors<br>
+            <br><b>Job Description:</b><br>
+            You will be in a rotational program going between Software Engineering,<br>
+            Business Analyst, Technical Business Manager, and Network Engineer<br>
+            This will be a 24 month rotational program with a project in each area<br>
+            and you being in each area for six months each.<br>
+            <span id="dots4">...</span><span id="more4">
+                <br><b>Responsibilities and Requirements:</b><br>
+                To be pursuing a Bachelors degree in related major such as: STEM(Science, Technology, Engineering,
+                Mathematics)<br>
+                Proven, applied technology experience through prior internships or academic projects<br>
+                The ability to thrive in a fast-paced environment<br>
+                Strong communication, collaboration, and interpersonal skills<br>
+                Motivation, curiosity and enthusiasm<br>
+                Minimum 3.0 cumulative GPA
+            </span><br></p2>
+        <button type="seeMore" onClick="location.href = 'TechnologyDevelopment.html'">See full Description</input>
+            <button onclick="Job4()" id="myBtn4">Read more</button>
+    </div>
+
+    <!-- Job posting 5 -->
+    <div class="JobPosting5">
+        <p1><b>Software Engineer</b><br></p1>
+        <p2>
+            This job is for: Computer science, Math, or Engineering Majors<br>
+            <br><b>Job Description:</b><br>
+            Develop new automation scripts in Python and JavaScript<br>
+            Maintain and fix existing scripts running in applications<br>
+            Port existing scripts from new or prior applications<br>
+            <span id="dots5">...</span><span id="more5">
+                <br><b>Responsibilities and Requirements:</b><br>
+                To work in small groups and collaberate on coding projects<br>
+                Able to work on back-end and front-end applications<br>
+                Python experience demonstrated through sample code<br>
+                Familiarity with JavaScript and web frontend development<br>
+                Good working knowledge and understanding of the tools of the trade - git, debuggers, command line, dev
+                tools<br>
+                Great problem solving skills
+            </span><br></p2>
+        <button type="seeMore" onClick="location.href = 'SoftwareEngineer.html'">See full Description</input>
+            <button onclick="Job5()" id="myBtn5">Read more</button>
+    </div>
+</body>
+
+</html>
