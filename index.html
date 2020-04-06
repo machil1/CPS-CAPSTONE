@@ -26,9 +26,7 @@
     <div class=Container>
         <div class="tab1">
             <button onclick="popup()" class="dropbutton1">Login</button>
-            <button onclick="location.href = 'EmployeeAccount.html'" class="dropbutton1">Employee</button>
-            <button onclick="location.href = 'EmployerAccount.html'" class="dropbutton1">Employer</button>
-
+            <button onclick = "location.href = 'navigationBar.html'" class="dropbutton1">Employee Page</button>
         </div>
     </div>
 
@@ -62,24 +60,28 @@
         <input type="Search" placeholder="Search..">
         <button type="Enter">Submit<i class="searchButton"></i></button>
     </div>
-
+    
+<!-- ADDED DIV FOR JOB POSTINGS FROM DATABASE TO POPULATE -->    
+<div id = "jobPostings"><hr></div>
+    
+    
     <!-- Job Post 1 -->
     <div class="JobPosting1">
         <p1><b>Data Analyst</b><br></p1>
         <p2>
             This job is for: Computer science, Math, or Engineering Majors<br>
-            <br><b>Job Description:</b><br>
-            Provides strategic and tactical support to the organization by analyzing and interpreting the data to
+            <br>Job Description:<br>
+            • Provides strategic and tactical support to the organization by analyzing and interpreting the data to
             provide creative solutions.<br>
-            Performs data analysis with regard to client requests and develops rules and methodologies for
+            • Performs data analysis with regard to client requests and develops rules and methodologies for
             effective data management.<br><span id="dots1">...</span><span id="more1">
-                <br><b>Responsibilities and Requirements:</b><br>
-                Assuring the integrity of project data, including data extraction, storage, manipulation, processing
+                <br>Duties and Responsibilities:<br>
+                • Assuring the integrity of project data, including data extraction, storage, manipulation, processing
                 and analysis.<br>
-                Collecting and collating appropriate data for usage in databases and conducting related research.<br>
-                Discussing business intelligence needs or information with external clients and internal staff.<br>
-                Participating in ongoing decisions concerning data collections, study design, methodology and data
-                analysis</span><br></p2>
+                • Collecting and collating appropriate data for usage in databases and conducting related research.<br>
+                • Discussing business intelligence needs or information with external clients and internal staff.<br>
+                • Participating in ongoing decisions concerning data collections, study design, methodology and data
+                analysis</span></p2>
         <button type="seeMore" onClick="location.href = 'dataAnalyst.html'">See full Description</input>
             <button onclick="Job1()" id="myBtn1">Read more</button>
     </div>
@@ -89,24 +91,24 @@
         <p1><b>Software Developer</b></p1><br>
         <p2>
             This job is for: Computer Science, Math, and Engineering Majors<br>
-            <br><b>Job Description:</b><br>
-            Develop, create, and modify general computer application software or specialized programs<br>
-            Analyze user needs and develop software solutions<br>
-            Design or customize software for client use to optimize operational efficiency<br><span
+            <br>Responsibilities:<br>
+            • Develop, create, and modify general computer application software or specialized programs<br>
+            • Analyze user needs and develop software solutions<br>
+            • Design or customize software for client use to optimize operational efficiency<br><span
                 id="dots2">...</span><span id="more2">
-                Improve existing systems by analyzing areas of modification<br>
-                Analyze and design databases with application areas<br>
-                Coordinate database development with a team or individually<br>
-                Maintain systems by monitoring, identifying, and correcting software defects<br>
-                Create technical specifications and test plans<br>
-                Update knowledge and skills regularly through in-house and external courses, manuals, and new
+                • Improve existing systems by analyzing areas of modification<br>
+                • Analyze and design databases with application areas<br>
+                • Coordinate database development with a team or individually<br>
+                • Maintain systems by monitoring, identifying, and correcting software defects<br>
+                • Create technical specifications and test plans<br>
+                • Update knowledge and skills regularly through in-house and external courses, manuals, and new
                 applications<br>
-                <br><b>Responsibilities and Requirements:</b><br>
-                Knowledge of basic computer science concepts, programming, and Information Systems <br>
-                Interest and willingness to travel and relocate <br>
-                Previous experience in Java/J2EE Development, C++/C#, .NET, VB/ASP Development and Database experience
+                <br>Requirements:<br>
+                • Knowledge of basic computer science concepts, programming, and Information Systems <br>
+                • Interest and willingness to travel and relocate <br>
+                • Previous experience in Java/J2EE Development, C++/C#, .NET, VB/ASP Development and Database experience
                 is preferred <br>
-            </span><br></p2>
+            </span></p2>
         <button type="seeMore" onClick="location.href = 'softwareDeveloper.html'">See full Description</input>
             <button onclick="Job2()" id="myBtn2">Read more</button>
     </div>
@@ -128,20 +130,18 @@
         <p1><b>Senior Java Developer</b><br></p1>
         <p2>
             This job is for: Computer science, Math, or Engineering Majors<br>
-            <br><b>Job Description:</b><br>
-            Skilled and experienced Java software developer.<br>
-            Knowledge of embedded Java software development, sensors, and robotics a plus.<br>
-            Skilled and experienced object-oriented software professional.
-            <br><span id="dots3">...</span><span id="more3">
-                <br><b>Responsibilities and Requirements:</b><br>
-                Extensive knowledge, skill, and experience with programming in Java.<br>
-                Knowledge of Java SE libraries.<br>
-                Object-oriented Java programming skill.<br>
-                Skill in reuse of, extension of, and refactoring of software.<br>
-                Documentation and JavaDoc of code.<br>
-                Debugging and performance profiling skills.<br>
-                Bachelors Degree minimum and at least five years of Java required
-            </span><br></p2>
+            <br>Job Description:<br>
+            • Provides strategic and tactical support to the organization by analyzing and interpreting the data to
+            provide creative solutions.<br>
+            • Performs data analysis with regard to client requests and develops rules and methodologies for
+            effective data management.<br><span id="dots3">...</span><span id="more3">
+                <br>Duties and Responsibilities:<br>
+                • Assuring the integrity of project data, including data extraction, storage, manipulation, processing
+                and analysis.<br>
+                • Collecting and collating appropriate data for usage in databases and conducting related research.<br>
+                • Discussing business intelligence needs or information with external clients and internal staff.<br>
+                • Participating in ongoing decisions concerning data collections, study design, methodology and data
+                analysis</span></p2>
         <button type="seeMore" onClick="location.href = 'SeniorJavaDeveloper.html'">See full Description</input>
             <button onclick="Job3()" id="myBtn3">Read more</button>
 
@@ -152,21 +152,18 @@
         <p1><b>Technology Development Program</b><br></p1>
         <p2>
             This job is for: Computer science, Math, or Engineering Majors<br>
-            <br><b>Job Description:</b><br>
-            You will be in a rotational program going between Software Engineering,<br>
-            Business Analyst, Technical Business Manager, and Network Engineer<br>
-            This will be a 24 month rotational program with a project in each area<br>
-            and you being in each area for six months each.<br>
-            <span id="dots4">...</span><span id="more4">
-                <br><b>Responsibilities and Requirements:</b><br>
-                To be pursuing a Bachelors degree in related major such as: STEM(Science, Technology, Engineering,
-                Mathematics)<br>
-                Proven, applied technology experience through prior internships or academic projects<br>
-                The ability to thrive in a fast-paced environment<br>
-                Strong communication, collaboration, and interpersonal skills<br>
-                Motivation, curiosity and enthusiasm<br>
-                Minimum 3.0 cumulative GPA
-            </span><br></p2>
+            <br>Job Description:<br>
+            • Provides strategic and tactical support to the organization by analyzing and interpreting the data to
+            provide creative solutions.<br>
+            • Performs data analysis with regard to client requests and develops rules and methodologies for
+            effective data management.<br><span id="dots4">...</span><span id="more4">
+                <br>Duties and Responsibilities:<br>
+                • Assuring the integrity of project data, including data extraction, storage, manipulation, processing
+                and analysis.<br>
+                • Collecting and collating appropriate data for usage in databases and conducting related research.<br>
+                • Discussing business intelligence needs or information with external clients and internal staff.<br>
+                • Participating in ongoing decisions concerning data collections, study design, methodology and data
+                analysis</span></p2>
         <button type="seeMore" onClick="location.href = 'TechnologyDevelopment.html'">See full Description</input>
             <button onclick="Job4()" id="myBtn4">Read more</button>
     </div>
@@ -176,20 +173,18 @@
         <p1><b>Software Engineer</b><br></p1>
         <p2>
             This job is for: Computer science, Math, or Engineering Majors<br>
-            <br><b>Job Description:</b><br>
-            Develop new automation scripts in Python and JavaScript<br>
-            Maintain and fix existing scripts running in applications<br>
-            Port existing scripts from new or prior applications<br>
-            <span id="dots5">...</span><span id="more5">
-                <br><b>Responsibilities and Requirements:</b><br>
-                To work in small groups and collaberate on coding projects<br>
-                Able to work on back-end and front-end applications<br>
-                Python experience demonstrated through sample code<br>
-                Familiarity with JavaScript and web frontend development<br>
-                Good working knowledge and understanding of the tools of the trade - git, debuggers, command line, dev
-                tools<br>
-                Great problem solving skills
-            </span><br></p2>
+            <br>Job Description:<br>
+            • Provides strategic and tactical support to the organization by analyzing and interpreting the data to
+            provide creative solutions.<br>
+            • Performs data analysis with regard to client requests and develops rules and methodologies for
+            effective data management.<br><span id="dots5">...</span><span id="more5">
+                <br>Duties and Responsibilities:<br>
+                • Assuring the integrity of project data, including data extraction, storage, manipulation, processing
+                and analysis.<br>
+                • Collecting and collating appropriate data for usage in databases and conducting related research.<br>
+                • Discussing business intelligence needs or information with external clients and internal staff.<br>
+                • Participating in ongoing decisions concerning data collections, study design, methodology and data
+                analysis</span></p2>
         <button type="seeMore" onClick="location.href = 'SoftwareEngineer.html'">See full Description</input>
             <button onclick="Job5()" id="myBtn5">Read more</button>
     </div>
