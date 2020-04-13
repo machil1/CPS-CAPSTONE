@@ -136,51 +136,53 @@ $(function () {
   $("#signupbtn").click(function () {
     $(this).parent().parent().hide();
 
-    var usertype = $("input[name=emptype]:checked").val(); 
-    var username = $("#email").val().trim();
+    var usertype = $("input[name=emptype]:checked").val();
+    var fName = $("#FName").val().trim();
+    var lName =  $("#LName").val().trim();
+    var email = $("#email").val().trim();
     var password = $("#c-password").val().trim();
     var pswrepeat = $("#psw-repeat").val().trim();
     var phoneNum = $("#phoneNum").val().trim();
+    //var cName = $('#compName').val().trim();
 
     if(password != pswrepeat){
       alert("Please make sure passwords match!");
     }
-
-    else if (password == pswrepeat) {
-      alert("Account creation success");
-      /*$.ajax({
-        url: 'addUser.php',
-        type: 'post',
-        dataType: 'json',
-        data: { username: username, password: password },
-        success: function (response) {
-          name = response;
-          var msg = "";
-          var msg1 = "";
-          var msg2 = "";
-          if (response == 2){
-            alert("Please Logout First")
-          }
-          else if (response != 0) {
-            name = response[0];
-            avgWageAvgUser = response[1];
-            ePopAvgUser = response[2];
-            msg1 = "Welcome, " + name;
-            $("#welcome").html(msg1);
-            document.getElementById("message2").innerHTML = "";
-            $("#password").attr("placeholder", "password").val("").blur();
-          }
-          else {
-            msg = "Invalid Username and Password!";
-            $("#message2").html(msg);
-            $("#password").attr("placeholder", "password").val("").blur();
+    else if(usertype == "EmpChck"){
+      $.ajax({
+        url: "CreateEmployee.php",
+        type: "POST",
+        data: {fName: fName, lName: lName, email: email, password: password, phoneNum: phoneNum},
+        success: function(response){
+          if(response !== 0){
+            alert(response)
+            if(response == "Successfully created a account!"){
+              window.location.href = "index.html";
+            }
+            else {
+              window.location.href = "createAccount.html";
+            }
           }
         }
-      });*/
+      });
     }
-    else {
-      alert("account creation fail");
+    else{
+      $.ajax({
+        url: 'CreateEmployer.php',
+        type: 'POST',
+        data: {cName: cName, email: email, password: password, phoneNum: phoneNum},
+        success: function(response){
+          if(response !== 0){
+            alert(response)
+            if(response == "Successfully created a account!"){
+              window.location.href = "index.html";
+            }
+            else {
+              window.location.href = "createAccount.html";
+            }
+          }
+        }
+      });
     }
   });
-
 });
