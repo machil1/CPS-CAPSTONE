@@ -1,26 +1,6 @@
 <!DOCTYPE html>
 <html>
 <style>
-    .btn,.button{
-        border:none;
-        display:inline-block;
-        padding:8px 16px;
-        vertical-align:middle;
-        overflow:hidden;
-        text-decoration:none;
-        color:black;
-        background-color:#00ff7c;
-        text-align:center;
-        cursor:pointer;
-        white-space:nowrap
-    }
-    div.divis {
-        background-color: #ccc;
-        padding-left: 15px;
-        padding-right: 15px;
-        height: 300px;
-        overflow: scroll;
-    }
 </style>
 <head>
 
@@ -30,6 +10,155 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
 <link rel="stylesheet" type="text/css" href="stylesheet.css"></script>
 <script type="text/javascript" src="functions.js"></script>
+
+<script>
+    //Open modal to change information for the Employer
+    function cchangeInfo() {
+        var modal = document.getElementById("cmodalInfo");
+        var btn = document.getElementById("cchangeInfoBtn");
+        var span = document.getElementsByClassName("close")[0];
+        var btn2 = document.getElementById("cconfirmButton");
+    
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+    
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        btn2.onclick = function() {
+            var cname = document.getElementById("tempcompanyname");
+            var username = document.getElementById("ctempusername").value;
+            var name = document.getElementById("ctempname").value;
+            var email = document.getElementById("ctempemail").value.indexOf("@");
+            var pass1 = document.getElementById("ctemppass").value;
+            var pass2 = document.getElementById("ctempcpass").value;
+            var cpass = document.getElementById("ccpass").value;
+
+            var oldcname = document.getElementById("cname");
+            var oldusername = document.getElementById("username").value;
+            var oldname = document.getElementById("name").value;
+            var oldemail = document.getElementById("email").value.indexOf("@");
+
+            var submit = "true";
+            if (isNaN(cname)) {} else {
+                oldcname = cname; 
+            }
+            if (isNaN(username)) {} else {
+                oldusername = username;
+            }
+            if(isNaN(name)) {} else {
+                oldname = name;
+            }
+            if(isNaN(email)) {} else {
+                oldemail = email;
+            }
+
+            if (email == -1) {
+                alert("Not a valid e-mail");
+                submit = "false";
+            } else {
+                oldemail = email;
+            }
+
+            if (pass1 != pass2) {
+                alert("New password does not match confirmation password");
+                submit = "false";
+            }
+
+            if (submit == "true") {
+                modal.style.display = "none";
+            }
+            submit = "true";
+        }
+    }
+    function cposting() {
+        var modal = document.getElementById("cmodalPosting");
+        var position = document.getElementById("cposition");
+        var post = document.getElementById("cpost");
+        var btn = document.getElementById("cpostBtn");
+        var btn2 = document.getElementById("cpostButton");
+        var span = document.getElementsByClassName("close")[1];
+        var submit = "true";
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+    
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        btn2.onclick = function() {
+            if(isNaN(position)) {} else {
+                submit = "false";
+                alert("Please write name of position");
+            }
+            if(isNaN(cpost)) {} else {
+                submit = "false";
+                alert("Please enter description");
+            }
+            if (submit == "true") {
+                modal.style.display = "none";
+            }
+            submit = "true";
+        }
+    }
+    //Open modal to send Message for Employer
+    function cmessag() {
+        var modal = document.getElementById("cmodalMessage");
+        var to = document.getElementById("cto");
+        var topic = document.getElementById("ctopic");
+        var message = document.getElementById("cmessage");
+        var btn = document.getElementById("ccomposeBtn");
+        var btn2 = document.getElementById("csendBtn");
+        var span = document.getElementsByClassName("close")[2];
+        var submit = "true";
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+    
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        btn2.onclick = function() {
+            if(isNaN(to)) {} else {
+                submit = "false";
+                alert("Who not written");
+            }
+            if(isNaN(topic)) {} else {
+                submit = "false";
+                alert("Topic not written");
+            }
+            if(isNaN(message)) {} else {
+                submit = "false";
+                alert("Messsage not written");
+            }
+            if (submit == "true") {
+                modal.style.display = "none";
+            }
+            submit = "true";
+        }
+    }
+</script>
 
 <title>Employer Account</title>
 
@@ -43,17 +172,38 @@
         <a class="logo" href="#returnHome"><img src ="CyberHire_Logos_Reverse.png" height="38" width="158"></a>
         <a href="#title1">Test1</a>
         <a href="#title2">Test2</a>
-        <b href="#userIntro">Welcome, CompanyName/TODO</a>
+        <b href="#userIntro">Welcome,</a>
     </div>
     <p>This is not displayed</p>
-    <p>This is the Company Picture</p>
     <img src="Profile Image.jpg" alt="User Picture" width = "100" height = "100">
-    <p>Company Name: CompanyName <button class = "button">Change Company Name</button></p>
-    <p>Username: alexUsername <button class = "button">Change Username</button></p>
-    <p>Name: Alexandre Almeida <button class = "button">Change Name</button></p>
-    <p>e-mail: almeida1@kean.edu  <button class = "button">Change e-mail</button></p>
+    <p>Company Name:</p>
+    <p>Username:</p>
+    <p>Name:</p>
+    <p>e-mail:</p>
+    <button class = "button" id="cchangeInfoBtn" onclick="cchangeInfo()">Change Information</button>
+    <div id="cmodalInfo" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Company Name: <input type="text" id="tempcompanyname"><br></p>
+            <p>Username: <input type="text" id="ctempname"><br></p>
+            <p>Name: <input type="text" id="ctempusername"><br></p>
+            <p>e-mail: <input type="text" id="ctempemail"><br></p>
+            <p>New Password: <input type="text" id="ctemppass"><br></p>
+            <p>Confirm Password: <input type="text" id="ctempcpass"><br></p>
+            <p>Old Password Confirmation: <input type="text" id="ccpass"><br></p>
+            <button class ="button" id="cconfirmButton">Confirm</button>
+        </div>
+    </div>
     <hr>
-    <h1>Postings</h1>
+    <h1>Postings <button class = "button" id="cpostBtn" onclick="cposting()">Create a New Posting</button></h1>
+    <div id="cmodalPosting" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Position: <input type="text" id="cposition"><br></p>
+            <p>Description: <textarea id="cpost" rows="100" cols="100"></textarea></p>
+            <button class ="button" id="cpostButton">Post</button>
+        </div>
+    </div>
     <div class = "divis">
         <h2>Posting 1</h2>
         <p>Random nosadjsdjhasjdjkashdj asjdhkjashdlaskjhdjkasdkj askjdkjashkj jkdaskjdh shd nosadjsdjhasjdjkashdj asjdhkjashdlaskjhdjkasdkj askjdkjashkj jkdaskjdh shdnosadjsdjhasjdjkashdj asjdhkjashdlaskjhdjkasdkj askjdkjashkj jkdaskjdh shd</p>
@@ -62,25 +212,6 @@
         <h2>Posting 2</h2>
         <p>sajdhajsdh asjdaskjdhjaskdkjas dkjasdkj hghjagds</p>
         <button class = "button">Take Down Posting</button>
-    </div>
-    <hr>
-    <h1>Recieved Resumes<button class = "button">Add</button></h1>
-    <div class = "divis">
-        <h2>Resume 1    UserName1</h2>
-        <h2>Posting 1</h2>
-        <button class = "button">Delete</button>
-        <hr>
-        <h2>Resume 2    UserName2</h2>
-        <h2>Posting 2</h2>
-        <button class = "button">Delete</button>
-        <hr>
-        <h2>Resume 3    UserName3</h2>
-        <h2>Posting 1</h2>
-        <button class = "button">Delete</button>
-        <hr>
-        <h2>Resume 4    UserName4</h2>
-        <h2>Posting 1</h2>
-        <button class = "button">Delete</button>
     </div>
     <hr>
     <h1>Recieved Resumes</h1>
@@ -104,7 +235,16 @@
         <p><button class = "button">Read</button>           <button class = "button">Delete</button></p>
     </div>
     <hr>
-    <h1>Messages</h1>
+    <h1>Messages <button class = "button" id ="ccomposeBtn" onclick="cmessag()">Compose Message</button></h1>
+    <div id="cmodalMessage" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>To: <input type="text" id="cto"><br></p>
+            <p>Topic: <input type="text" id="ctopic"><br></p>
+            <p>Message: <textarea id="cmessage" rows="50" cols="40"></textarea></p>
+            <button class ="button" id="csendBtn">Send</button>
+        </div>
+    </div>
     <div class = "divis">
         <h2>Message 1</h2>
         <p>Random nosadjsdjhasjdjkashdj asjdhkjashdlaskjhdjkasdkj askjdkjashkj jkdaskjdh shd nosadjsdjhasjdjkashdj asjdhkjashdlaskjhdjkasdkj askjdkjashkj jkdaskjdh shdnosadjsdjhasjdjkashdj asjdhkjashdlaskjhdjkasdkj askjdkjashkj jkdaskjdh shd</p>
@@ -122,4 +262,5 @@
         <p>sajdhajsdh asjdaskjdhjaskdkjas dkjasdkj hghjagds</p>
         <p><button class = "button">Respond</button> <button class = "button">Delete</button></p>
     </div>
+    <hr>
 </html>
