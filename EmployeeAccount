@@ -122,6 +122,10 @@
 <script type="text/javascript" src="functions.js"></script>
 
 <script>
+    resNum = 1;
+    sentNum = 1;
+    pass123 = "password";
+
     //Open modal to send Message
     function messag() {
         var modal = document.getElementById("modalMessage");
@@ -186,47 +190,51 @@
             }
         }
         btn2.onclick = function() {
+            var modal = document.getElementById("modalInfo");
             var username = document.getElementById("tempusername").value;
             var name = document.getElementById("tempname").value;
-            var email = document.getElementById("tempemail").value.indexOf("@");
+            var email = document.getElementById("tempemail").value;
             var pass1 = document.getElementById("temppass").value;
             var pass2 = document.getElementById("tempcpass").value;
             var cpass = document.getElementById("cpass").value;
 
-            var oldusername = document.getElementById("username").value;
-            var oldname = document.getElementById("name").value;
-            var oldemail = document.getElementById("email").value.indexOf("@");
+            // var oldusername = document.getElementById("username").value;
+            // var oldname = document.getElementById("name").value;
+            // var oldemail = document.getElementById("email").value.indexOf("@");
 
-            var submit = "true";
+            un = 0;
+            n = 0;
+            e = 0;
+            p = 0;
 
-            if (isNaN(username)) {} else {
-                oldusername = username;
+            if (username != "") un = 1;
+            if(name != "") n = 1;
+            if (email != "") e = 1;
+            if (pass1 != "" || pass2 != "") {
+                p = 1;
+                if (pass1 != pass2) {
+                    alert("New password does not match confirmation password");
+                    p = 2;
+                }
             }
-            if(isNaN(name)) {} else {
-                oldname = name;
-            }
-            if(isNaN(email)) {} else {
-                oldemail = email;
-            }
-
-            if (email == -1) {
-                alert("Not a valid e-mail");
-                submit = "false";
-            } else {
-                oldemail = email;
-            }
-
-            if (pass1 != pass2) {
-                alert("New password does not match confirmation password");
-                submit = "false";
-            }
-
-            if (submit == "true") {
+            if (un == 0 && n == 0 && e == 0 && p == 0) alert("No input detected");
+            else if (p != 2 && cpass == pass123) {
+                if (p == 1) pass123 = pass1;
+                if (un == 1) document.getElementById("username").innerHTML = username;
+                if (n == 1) {
+                    document.getElementById("name").innerHTML = name;
+                    document.getElementById("welcome").innerHTML = name;
+                }
+                if (e == 1) document.getElementById("email").innerHTML = email;
                 modal.style.display = "none";
-            }
-            submit = "true";
+            } else if (cpass != pass123) alert("Incorrect password");
+            un = 0;
+            n = 0;
+            e = 0;
+            p = 0;
         }
     }
+    //Send resume button open modal
     function sendResume() {
         var modal = document.getElementById("modalResume");
         var btn = document.getElementById("sendResumeBtn");
@@ -246,6 +254,63 @@
             }
         }
     }
+    //Add Resume to List
+    function addResume () {
+        var file = document.getElementById("myfile");
+        var res1 = document.getElementById("res1").innerHTML;
+        var res2 = document.getElementById("res2").innerHTML;
+
+        document.getElementById("res1").innerHTML = res1 + "<h2 id=\"resume" + resNum + "\">Resume " + resNum + "</h2>" +
+        "<p id=\"res" + resNum + "Desc\">" + file + "</p>" +
+        "<button class=\"button\" id=\"resume" + resNum + "Del\" onclick=\"sendRes(" + resNum + ")\">Send Resume</button>\t" +
+        "<hr id=\"hrRes" + resNum + "\">";
+        document.getElementById("res2").innerHTML = res2 + "<h2 id=\"resume" + resNum + "2\">Resume " + resNum + "</h2>" +
+        "<p id=\"res" + resNum + "2Desc\">" + file + "</p>" +
+        "<button class=\"button\" id=\"resume" + resNum + "2Del\" onclick=\"delResume(" + resNum + ")\">Delete</button>\t" +
+        "<button class=\"button\" id=\"res" + resNum + "2View\">View</button>" +
+        "<hr id=\"hrRes" + resNum + "2\">";
+        resNum++;
+    }
+    //Delete resume from List
+    function delResume (rDelete) {
+        document.getElementById("resume" + rDelete).remove();
+        document.getElementById("resume" + rDelete + "2").remove();
+        document.getElementById("res" + rDelete + "2Desc").remove();
+        document.getElementById("res" + rDelete + "Desc").remove();
+        document.getElementById("resume" + rDelete + "Del").remove();
+        document.getElementById("resume" + rDelete + "2Del").remove();
+        document.getElementById("res" + rDelete + "2View").remove();
+        document.getElementById("hrRes" + rDelete + "2").remove();
+        document.getElementById("hrRes" + rDelete).remove();
+    }
+    //Confirm send resume after typing to whom
+    function sendRes (resNumber) {
+        if (document.getElementById("toRes").value == "") {
+            alert("Please write to who");
+        } else {
+            var modal = document.getElementById("modalSendResume");
+            var list = document.getElementById("sentList").innerHTML;
+            var date = new Date();
+
+            document.getElementById("sentList").innerHTML = list +
+            "<h2 id=\"sentHeader" + sentNum +"\">Resume " + resNumber + "</h2>" +
+            "<p id=\"sentWho" + sentNum + "\">Sent: " + document.getElementById("toRes").value + "</p>" +
+            "<p id=\"date" + sentNum + "\">Date: " + date + "</p>" +
+            "<p id=\"status" + sentNum + "\">Status: <p>" +
+            "<button class=\"button\" id=\"cancelSent" + sentNum + "\" onclick=\"cancelSent(" + sentNum + ")\">Cancel</button>" +
+            "<hr id=\"hrSent" + sentNum + "\">";
+            modal.style.display = "none";
+        }
+    }
+    //Cancel sent resume and delete it from list
+    function cancelSent (sentNum) {
+        document.getElementById("sentHeader" + sentNum).remove();
+        document.getElementById("sentWho" + sentNum).remove();
+        document.getElementById("date" + sentNum).remove();
+        document.getElementById("status" + sentNum).remove();
+        document.getElementById("cancelSent" + sentNum).remove();
+        document.getElementById("hrSent" + sentNum).remove();
+    }
 </script>
 
 <title>Employee Account</title>
@@ -258,28 +323,30 @@
 <body>
     <div class="topnav">
         <a class="logo" href="#returnHome"><img src ="CyberHire_Logos_Reverse.png" height="38" width="158"></a>
-        <a href="#title1">Look for a Job</a>
-        <a href="#title2">Upload Resume</a>
-        <a href="#title3">Resume List</a>
-        <a href="#title4">Messages</a>
-        <b href="#userIntro">Welcome,</a>
+        <a href="#title1">Tab 1</a>
+        <a href="#title2">Tab 2</a>
+        <a href="#title3">Tab 3</a>
+        <a href="#title4">Tab 4</a>
+        <b href="#userIntro">Welcome, <span id="welcome">Name</span></a>
     </div>
     <p>This is not displayed</p>
     <img src="Profile Image.jpg" alt="User Picture" width = "100" height = "100">
-    <p>Username: <p id="username"></p></p>
-    <p>Name: <p id="name"></p></p>
-    <p>e-mail: <p id="email"></p></p>
+    <p>Username: <span id="username">Username</span></p>
+    <p>Name: <span id="name">Name</span></p>
+    <p>e-mail: <span id="email">e-mail</span></p>
     <button class = "button" id="changeInfoBtn" onclick="changeInfo()">Change Information</button>
     <div id="modalInfo" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Username: <input type="text" id="tempname"><br></p>
-            <p>Name: <input type="text" id="tempusername"><br></p>
-            <p>e-mail: <input type="text" id="tempemail"><br></p>
-            <p>New Password: <input type="text" id="temppass"><br></p>
-            <p>Confirm Password: <input type="text" id="tempcpass"><br></p>
-            <p>Old Password Confirmation: <input type="text" id="cpass"><br></p>
-            <button class ="button" id="confirmButton">Confirm</button>
+            <!-- <form> -->
+                <p>Username: <input type="text" id="tempusername" placeholder="Leave Blank to Keep Username"><br></p>
+                <p>Name: <input type="text" id="tempname" placeholder="Leave Blank to Keep Name"><br></p>
+                <p>e-mail: </p><input type="email" id="tempemail" placeholder="Leave Blank to Keep e-mail"><br>
+                <p>New Password: <input type="password" id="temppass" placeholder="Leave Blank to Keep Password"><br></p>
+                <p>Confirm Password: <input type="password" id="tempcpass" placeholder="Leave Blank to Keep Password"><br></p>
+                <p>Old Password Confirmation: <input type="password" id="cpass"><br></p>
+                <button class ="button" id="confirmButton" value = "submit">Confirm</button>
+            <!-- </form> -->
         </div>
     </div>
     <hr>
@@ -305,58 +372,26 @@
     <hr>
     <h1>Sent Resumes <button class="button" id="sendResumeBtn" onclick="sendResume()">Send Resume</button></h1>
     <div id="modalResume" class="modal">
-        <div class="modal-content">
+        <div class="modal-content" id = "modalSendResume">
             <span class="close">&times;</span>
-            <p>To: <input type="text" id="to"><br></p>
-            <p>Resume Uploads    <form action="/action_page.php">
-                <label for="myfile"></label>
-                <input type="file" id="myfile" name="myfile">
-                <button class="button">Submit</button>
-            </form></p>
-            <div class = "divis">
-                <h2>Resume 1</h2>
-                <p>Random nosadjsdjhasjdjkashdj asjdhkjashdlaskjhdjkasdkj askjdkjashkj jkdaskjdh shd </p>
-                <button class = "button">Select</button>
-                <hr>
-                <h2>Resume 2</h2>
-                <p>sajdhajsdh asjdaskjdhjaskdkjas dkjasdkj hghjagds</p>
-                <button class = "button">Select</button>
+            <p>To: <input type="text" id="toRes"><br></p>
+            <h1>Resume Uploads</h1>
+            <div class = "divis" id = "resumeList">
+                <div id = "res1"></div>
             </div>
         </div>
     </div>
     <div class = "divis">
-        <h2>Resume 1</h2>
-        <p>Sent: CompanyName1</p>
-        <p>Date: March 20, 2020</p>
-        <p>Status: Waiting</p>
-        <button class = "button">Delete</button>
-        <hr>
-        <h2>Resume 1</h2>
-        <p>Sent: CompanyName2</p>
-        <p>Date: March 22, 2020</p>
-        <p>Status: Accepted</p>
-        <button class = "button">View</button>
-        <hr>
-        <h2>Resume 2</h2>
-        <p>Sent: CompanyName3</p>
-        <p>Date: January 10, 2020</p>
-        <p>Status: Denied</p>
-        <button class = "button">Delete</button>
+        <div id="sentList"></div>
     </div>
     <hr>
     <h1>Resume Uploads <form action="/action_page.php">
         <label for="myfile"></label>
-        <input type="file" id="myfile" name="myfile">
-        <button class="button">Submit</button>
-    </form></h1>
-    <div class = "divis">
-        <h2>Resume 1</h2>
-        <p>Random nosadjsdjhasjdjkashdj asjdhkjashdlaskjhdjkasdkj askjdkjashkj jkdaskjdh shd </p>
-        <button class = "button">Delete</button>
-        <hr>
-        <h2>Resume 2</h2>
-        <p>sajdhajsdh asjdaskjdhjaskdkjas dkjasdkj hghjagds</p>
-        <button class = "button">Delete</button>
+        <input type="file" id="resFile" name="myfile"></form>
+        <button class="button" onclick="addResume()">Submit</button>
+    </h1>
+    <div class="divis" id="resumeList">
+        <div id = "res2"></div>
     </div>
     <hr>
 </html>
