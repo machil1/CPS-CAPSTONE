@@ -1,0 +1,95 @@
+/*Code for index.html Search bar/Logo image/ and color of background*/
+.Container input[type=search]
+{
+    width:auto;
+    float: left;
+}
+.Container img{
+    float:left;
+}
+.Container {
+    background-color: black;
+}
+.main {
+    background-color: black;
+}
+/*Index page buttons color */
+.Container button{
+    background-color: #00ff7c;
+}
+.Container button:hover{
+    background-color: rgb(29, 150, 29);
+}
+/*Search Bar */
+.main #search {
+    width:auto;
+}
+.main button {
+    background-color: #00ff7c;
+}
+.main button:hover{
+    background-color: rgb(29, 150, 29);
+}
+
+/* Login Button CSS */
+.btn input[type=button] {
+    float: right;
+    background-color: #00ff7c;
+    border: 1px solid white;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+    width: auto;
+}
+
+/* Create Account Styling */
+.header {
+    background-color: black;
+    padding: 5px;
+}
+/* Full-width input fields */
+input[type=text],
+input[type=password] {
+  width: 40%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+  outline: none;
+}
+
+/* Code for Employee Employer Account */
+.navbar-inverse{
+    padding: 5px;
+}
+.navbar-inverse a{
+    transition: .5;
+    background-color: #00ff7c !important ;
+    color:white !important;
+}
+.navbar-inverse a:hover{
+    transition: .5;
+    background-color: rgb(29, 150, 29) !important;
+    color:white !important;
+}
+.navbar-inverse a:focus{
+    transition: .5;
+    background-color: rgb(29, 150, 29) !important;
+}
+.clearfix button{
+    background-color: #00ff7c;
+}
+.clearfix button:hover{
+    background-color: rgb(29, 150, 29) !important;
+}
+.clearfix button:focus{
+    background-color: rgb(29, 150, 29) !important;
+}
+.navbar-top{
+    
+}
