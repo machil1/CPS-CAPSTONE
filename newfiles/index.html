@@ -40,78 +40,84 @@
 <header>
     <!-- Heading in HTML -->
     <title>CyberHire</title>
-</header>
-
-<body>
     <div class="Container">
         <div class="text-right">
             <!-- Pop-up -->
-            <img src="CyberHirelogo.png" alt="Logo" style="width:150px;height:37.8px;">
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Login</button>
-            <div class="modal" id="myModal" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <form class="form" action="#" id="login" method="POST">
-                                <center>
-                                    <h3>Login</h3>
-                                </center>
-                                <hr /><br />
-                                <center>
-                                    <div id="radioBTN">
-                                        <input type="radio" name="emptype" value="EmpChck" checked>Employee</input>
-                                        <input type="radio" name="emptype" value="EmprChck">Employer</input>
+            <img src="CyberHirelogo.png" alt="Logo" style="width:150px;height:39.8px;">
+            <div class="float-right">
+                <ul class="nav nav-pills nav-fill" id="list">
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-success" data-toggle="modal"
+                            data-target="#myModal">Login</button>
+                        <button onclick="location.href = 'EmployeeAccount.html'"
+                            class="btn btn-success float-right">Employee</button>
+                        <button onclick="location.href = 'EmployerAccount.html'"
+                            class="btn btn-success float-right">Employer</button>
+                        <div class="modal" id="myModal" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <form class="form" action="#" id="login" method="POST">
+                                            <center>
+                                                <h3>Login</h3>
+                                            </center>
+                                            <hr /><br />
+                                            <center>
+                                                <div id="radioBTN">
+                                                    <input type="radio" name="emptype" value="EmpChck"
+                                                        checked>Employee</input>
+                                                    <input type="radio" name="emptype" value="EmprChck">Employer</input>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">Email: </label>
+                                                    <input type="email" id="email" class="form-control" /><br /><br />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="pwd">Password: </label>
+                                                    <input type="pwd" id="pwd" class="form-control" /><br /><br />
+                                                </div>
+                                                <br />
+                                                <div class="btn group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <input type="button"
+                                                            class="btn btn-default btn-block btn-success" id="loginbtn"
+                                                            value="Login" />
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <input type="button"
+                                                            class="btn btn-default btn-block btn-success" id="cancel"
+                                                            value="Cancel" data-dismiss="modal" />
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <input type="button"
+                                                            class="btn btn-default btn-block btn-success"
+                                                            onClick="location.href = 'createAccount.html'" id="create"
+                                                            value="Create Account">
+                                                    </div>
+                                                </div>
+                                            </center>
+                                            <br />
+                                        </form>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="email">Email: </label>
-                                        <input type="email" id="email" class="form-control" /><br /><br />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pwd">Password: </label>
-                                        <input type="pwd" id="pwd" class="form-control" /><br /><br />
-                                    </div>
-                                    <br />
-                                    <div class="btn group btn-group-justified">
-                                        <div class="btn-group">
-                                            <input type="button" class="btn btn-default btn-block btn-success"
-                                                id="loginbtn" value="Login" />
-                                        </div>
-                                        <div class="btn-group">
-                                            <input type="button" class="btn btn-default btn-block btn-success"
-                                                id="cancel" value="Cancel" data-dismiss="modal" />
-                                        </div>
-                                        <div class="btn-group">
-                                            <input type="button" class="btn btn-default btn-block btn-success"
-                                                onClick="location.href = 'createAccount.html'" id="create"
-                                                value="Create Account">
-                                        </div>
-                                    </div>
-                                </center>
-
-                                <br />
-                            </form>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
-            <!--<button onclick="popup()" class="dropbutton1">Login</button>-->
-            <button onclick="location.href = 'EmployeeAccount.html'"
-                class="btn btn-success float-right">Employee</button>
-            <button onclick="location.href = 'EmployerAccount.html'"
-                class="btn btn-success float-right">Employer</button>
+            
         </div>
+        <!-- Search Bar -->
+        <form class="search" role="search">
+            <input class="form-control" id="search" placeholder="Search..."/>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+        <!--<button onclick="popup()" class="dropbutton1">Login</button>-->
+        
     </div>
-    <!-- Search Bar -->
-    <div class="main">
-        <nav class="navbar">
-            <form class="form-inline">
-                <input class="form-control" id="search" type="search" placeholder="Search...">
-                <button class="btn btn-success" type="submit">Search</button>
-            </form>
-        </nav>
-    </div>
+</header>
 
-
+<body>
     <!-- ADDED DIV FOR JOB POSTINGS FROM DATABASE TO POPULATE -->
     <div id="jobPostings">
         <hr>
