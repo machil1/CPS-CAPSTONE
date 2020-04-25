@@ -1,4 +1,6 @@
 /*Code for index.html Search bar/Logo image/ and color of background*/
+
+/*Code for the search bar */
 .Container input[class="form-control"]
 {
     position: relative;
@@ -9,11 +11,12 @@
     position: relative;
     width:auto !important;
 }
+/* CSS for Cyber hire picture */
 .Container img{
     float:left;
 }
+/* Setting up the color of the header */
 .Container {
-
     background-color: black;
     padding: 5px;
 }
@@ -37,6 +40,16 @@ hr{
     width: 40% !important;
 }
 */
+
+/* Code for login email password text boxes */
+ .form-group{
+     width: 40% !important;
+     text-align: center;
+ }
+ .form-group[label = email]
+ {
+     font-weight: bold;
+ }
 
 /*Code for changing the color of the submit button */
 .main button {
