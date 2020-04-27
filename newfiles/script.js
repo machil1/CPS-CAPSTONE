@@ -255,8 +255,8 @@ function checkCookie() {
   var firstName = getCookie("person");
   
   if(firstName != null) {
-    document.getElementById("clearbuttons").innerHTML = " ";
-    document.getElementById("UserLogged").innerHTML = "Welcome, " + firstName;
+    var welcome ="<a style='color:rgb(255,255,255)'>Welcome, " + firstName + "</a><button href='#' id='logout' class='btn btn-success float-right'>Logout</button>";
+    document.getElementById("UserLogged").innerHTML = welcome;
       //alert("Welcome again, " + firstName);
   } 
   if(firstName == null) {
