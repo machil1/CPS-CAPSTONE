@@ -1,10 +1,10 @@
 <?php
-
+session_start();
 $cookie_n = "name";
-	if(!isset($_COOKIE['name'])){
+	if(!isset($_COOKIE['person'])){
 		echo "Please login in first<br>";
 	}
-$id = $_COOKIE['name'];
+$id = $_SESSION['EmprID'];
 
 include "config.php";
 
@@ -17,7 +17,6 @@ $location = $_POST['location'];
 $edulvl = $_POST['eduLevel'];
 $resp = $_POST['Responsibilities'];
 $require = $_POST['Requirements'];
-echo $comp;
 
     $sql_query = "SELECT count(*) as company FROM User_Employer WHERE $id = EmprID";
     $result = mysqli_query($con, $sql_query);
