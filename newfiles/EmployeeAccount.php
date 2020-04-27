@@ -52,8 +52,16 @@
 
   <div class="tab-content">
     <div class="tab-pane fade" id="accHome" role="tabpanel">
-      This is where database populates information for account info, job apps, and resume submittions
-
+          <?php
+      session_start();
+      //$CompanyName = $_SESSION['CompanyName'];
+      $Email = $_SESSION['Email'];
+      $PhoneNum = $_SESSION['PhoneNum'];
+      //echo "Company: $CompanyName<br>";
+      echo "Email Address: $Email<br>";
+      echo "Address: <br>";
+      echo "Phone Number: $PhoneNum";
+      ?>
     </div>
     <!--
     <div class="tab-pane fade" id="resume" role="tabpanel">
