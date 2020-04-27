@@ -52,12 +52,14 @@
 
   <div class="tab-content">
     <div class="tab-pane fade" id="accHome" role="tabpanel">
-          <?php
+      <?php
       session_start();
-      //$CompanyName = $_SESSION['CompanyName'];
+      $FName = $_SESSION['FName'];
+      $LName = $_SESSION['LName'];
       $Email = $_SESSION['Email'];
       $PhoneNum = $_SESSION['PhoneNum'];
-      //echo "Company: $CompanyName<br>";
+      echo "First Name: $FName<br>";
+      echo "Last Name: $LName<br>";
       echo "Email Address: $Email<br>";
       echo "Address: <br>";
       echo "Phone Number: $PhoneNum";
