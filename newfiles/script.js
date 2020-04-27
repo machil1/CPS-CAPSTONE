@@ -283,3 +283,26 @@ function getCookie(name) {
       // Return null if not found
       return null;
   }
+
+//Function for Logout
+  $(function () {
+    $('#logout').click(function () {
+      if (confirm('Are you sure to logout')) {
+        $.ajax({
+          url: 'Logout.php',
+          type: 'post',
+          success: function (response) {
+            if (response == 1) {
+              alert("You Logged Out")
+              window.location.reload()
+            }
+          }
+        });
+      }
+      else {
+        alert("User Cancelled Logout.")
+      }
+      return false;
+    });
+  });
+
