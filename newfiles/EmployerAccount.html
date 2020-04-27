@@ -70,35 +70,38 @@
       <hr>
     </div>
     <div class="tab-pane fade" id="job" role="tabpanel">
+      <center>
       <h3>Job information</h3>
-      <form action="/action_page.php">
+      <form action="CreateEmployer.php">
         <div class="form-group">
-          <label for="jobTitle">Title: </label>
+          <label for="jobTitle">Title: </label><br>
           <input type="jobTitle" class="form-control" id="jobTitle">
         </div>
         <div class="form-group">
-          <label for="jobDescription">Description: </label>
+          <label for="jobDescription">Description: </label><br>
           <!-- override in css code to format the size of text box-->
-          <input type="jobDescription" class="form-control" id="jobDescription" size="50">
+          <input type = "jobDescription" class="form-control" id="jobDescription" >
+          <!--<textarea rows= "5" cols = "50" class="form-control" id="jobDescription"style = "display:block !important; margin-left:auto; margin-right:auto; width:auto !important" ></textarea>-->
         </div>
         <div class="form-group">
-          <label for="location">Location: </label>
-          <input type="location" class="form-control" id="location">
+          <label for="location">Location: </label><br>
+          <input type="location" class="form-control" id="location" >
         </div>
         <div class="form-group">
-          <label for="eduLevel">Education Level: </label>
+          <label for="eduLevel">Education Level: </label><br>
           <input type="eduLevel" class="form-control" id="eduLevel">
         </div>
         <div class="form-group">
-          <label for="Responsibilities">Responsibilities: </label>
+          <label for="Responsibilities">Responsibilities: </label><br>
           <input type="Responsibilities" class="form-control" id="Responsibilities">
         </div>
         <div class="form-group">
-          <label for="Requirements">Requirements: </label>
+          <label for="Requirements">Requirements: </label><br>
           <input type="Requirements" class="form-control" id="Requirements">
-        </div>
-        <button class="button">Submit</button>
+        </div><br>
+        <button class="btn btn-success" id = "myFile">Submit</button>
       </form>
+      </center>
     </div>
 
   </div>
