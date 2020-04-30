@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
+    <style>
+        /*Modal*/
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: RGB(0,0,0);
+            background-color: RGB(0,0,0,0.4);
+        }
+    
+        .modal-content {
+            background-color: whitesmoke;
+            margin: auto;
+            padding: 14px 16px;
+            width: 80%;
+        }
+    </style>
+
 <head>
   <title>Employer Tab</title>
   <meta charset="utf-8">
@@ -45,6 +69,7 @@
 
   <div class="tab-content">
     <div class="tab-pane fade" id="accHome" role="tabpanel">
+        <p><img src="Profile Image.jpg" alt="User Picture" width = "200" height = "200"></p>
       <?php
       session_start();
       //$CompanyName = $_SESSION['CompanyName'];
@@ -66,6 +91,23 @@
       </p>
     </div>
     <div class="tab-pane fade" id="msgs" role="tabpanel">
+        <p></p>
+        <button class = "btn btn-success" id ="composeBtn" onclick="messag()">Compose Message</button>
+        <div id="modalMessage" class="modal">
+            <div class="modal-content">
+                <p>To: <input type="text" id="to"><br></p>
+                <p>Topic: <input type="text" id="topic"><br></p>
+                <p>Message: <textarea id="message"></textarea></p>
+                <div><button class ="btn btn-success" id="sendBtn">Send</button>
+            </div></div>
+        </div>
+        <h2>Message 1</h2>
+        <p>Random nosadjsdjhasjdjkashdj asjdhkjashdlaskjhdjkasdkj askjdkjashkj jkdaskjdh shd nosadjsdjhasjdjkashdj asjdhkjashdlaskjhdjkasdkj askjdkjashkj jkdaskjdh shdnosadjsdjhasjdjkashdj asjdhkjashdlaskjhdjkasdkj askjdkjashkj jkdaskjdh shd</p>
+        <p><button class = "btn btn-success">Respond</button> <button class = "btn btn-success">Delete</button></p>
+        <hr>
+        <h2>Message 2</h2>
+        <p>sajdhajsdh asjdaskjdhjaskdkjas dkjasdkj hghjagds</p>
+        <p><button class = "btn btn-success">Respond</button> <button class = "btn btn-success">Delete</button></p>
     </div>
     <div class="tab-pane fade" id="app" role="tabpanel">
       <h2>Application #</h2>
