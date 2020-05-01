@@ -248,14 +248,24 @@ $(function () {
       }
   });
 });
-
 //FUNCTION TO GET COOKIE FOR WELCOME MESSAGE
 function checkCookie() {
   // Get cookie using our custom function
   var firstName = getCookie("person");
-  
   if(firstName != null) {
-    var welcome ="<a style='color:rgb(255,255,255)'>Welcome, " + firstName + "</a><button href='#' id='logout' class='btn btn-success float-right'>Logout</button>";
+    document.getElementById("clearbuttons").innerHTML = " ";
+    var welcome = "<ul class='nav nav-pills nav-fill' id='list'>";
+    welcome += "<li class='nav-item'>";
+    welcome ="<a style='color:rgb(255,255,255)'>Welcome, " + firstName + "</a>";
+    welcome +="  <button href='#' id='logout' class='btn btn-success float-right'>Logout</button>";
+    if(firstName == 'CyberHire'){
+      welcome += '<button href="#" id="EmprAccount" class="btn btn-success float-right">Company</button>';
+    }
+    else{
+      welcome += '<button href="#" id="EmpAccount"  class="btn btn-success float-right">Candidate</button>';
+    }
+    welcome += "</li>";
+    welcome += "</ul>";
     document.getElementById("UserLogged").innerHTML = welcome;
       //alert("Welcome again, " + firstName);
   } 
@@ -284,6 +294,7 @@ function getCookie(name) {
       return null;
   }
 
+
 //Function for Logout
   $(function () {
     $('#logout').click(function () {
@@ -306,3 +317,85 @@ function getCookie(name) {
     });
   });
 
+$(function() {
+  $('#EmpAccount').click(function(){
+    window.location.href = "EmployeeAccount.php";
+  });
+});
+$(function() {
+  $('#EmprAccount').click(function(){
+    window.location.href = "EmployerAccount.php";
+  });
+});
+
+
+
+function messag() {
+  var modal = document.getElementById("modalMessage");
+  var to = document.getElementById("to");
+  var topic = document.getElementById("topic");
+  var message = document.getElementById("message");
+  var btn = document.getElementById("composeBtn");
+  var btn2 = document.getElementById("sendBtn");
+  var span = document.getElementsByClassName("close");
+  var submit = "true";
+
+  btn.onclick = function() {
+      modal.style.display = "block";
+  }
+
+  span.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+  btn2.onclick = function() {
+      if(isNaN(to)) {} else {
+          submit = "false";
+          alert("Who not written");
+      }
+      if(isNaN(topic)) {} else {
+          submit = "false";
+          alert("Topic not written");
+      }
+      if(isNaN(message)) {} else {
+          submit = "false";
+          alert("Messsage not written");
+      }
+      if (submit == "true") {
+          modal.style.display = "none";
+      }
+      submit = "true";
+  }
+}
+
+
+var JobApp = [];
+function jobAppl() {
+      $.ajax({
+        url: 'getApplication.php',
+        type: 'POST',
+        datatype: 'JSON',
+        success: function (JobApp) {
+            JobApp1 = JSON.parse(JobApp);
+            JobApp = jQuery.makeArray( JobApp1 );
+            console.log(JobApp);
+            
+            for (i = 1; i < JobApp.length; i++){
+                var jobApps ="";
+                jobApps += "<h2>Application #: " +JobApp[i][0] +"</h2>";
+                jobApps += "<p>Job Title: " +JobApp[i][6];
+                jobApps += "<br>Candidate ID: " +JobApp[i][1];
+                jobApps += "<br>Name: " + JobApp[i][2];
+                jobApps += " " +JobApp[i][3];
+                jobApps += "<br>Email: " +JobApp[i][5]; 
+                jobApps += "<br>Resume: <a href='uploads/" +JobApp[i][4] +"' target='_blank'>view resume</a></p>";
+                document.getElementById("jobApplications").innerHTML = document.getElementById("jobApplications").innerHTML +jobApps;
+          }
+        }
+      });
+    }
