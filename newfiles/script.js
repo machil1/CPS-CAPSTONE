@@ -23,32 +23,58 @@ function jobListing() {
                 edulvl.push(JobList[j][5]);
             }
             console.log(company);*/
-            
-            for (i = 1; i < JobList.length; i++){
-                var jobPosting ="";
-                jobPosting += "<br><b>Company: </b>";
-                jobPosting += "<b>" + JobList[i][1] + "</b><br>";
-                jobPosting += " Title: ";
-                jobPosting += JobList[i][2];
-                jobPosting += " <p style='white-space: pre-line'>Description: ";
-                jobPosting += JobList[i][3] + "</p>";
-                jobPosting += " Location: ";
-                jobPosting += JobList[i][4] + "<br>";
-                jobPosting += " Education Level: ";
-                jobPosting += JobList[i][5] + "<br>";
-                jobPosting += "<span id='dots'>...</span><span id='more'><br>";
-                //Respon and req after ... 
-                jobPosting += "Job Responsibilities: " +JobList[i][6] + "<br>";
-                jobPosting += "Job Requirements: " + JobList[i][7] + "</span>";
-                jobPosting += "<br><button type='seeMore' onClick='location.href = 'createAccount.html''>Apply Now</button>";
-                jobPosting += "<button onclick='Job()' id='myBtn'>Read more</button>";
-                jobPosting += "<hr>";
-                document.getElementById("jobPostings").innerHTML = document.getElementById("jobPostings").innerHTML +jobPosting;
-          }
-        }
-      });
-    }
+   
 
+      for (i = 1; i < JobList.length; i++) {
+        var jobPosting = "";
+        jobPosting += "<br><b>Company: </b>";
+        jobPosting += "<b>" + JobList[i][1] + "</b><br>";
+        jobPosting += " Title: ";
+        jobPosting += JobList[i][2];
+        jobPosting += " <p style='white-space: pre-line'>Description: ";
+        jobPosting += JobList[i][3] + "</p>";
+        jobPosting += " Location: ";
+        jobPosting += JobList[i][4] + "<br>";
+        jobPosting += "Education Level: ";
+        jobPosting += JobList[i][5] + "<br>";
+        jobPosting += "Job Responsibilities: " + JobList[i][6] + "<br>";
+        jobPosting += "Job Requirements: " + JobList[i][7] + "</span><br>";
+        jobPosting += "<div class='popup' onClick='myFunction()'>Apply Now"
+        +"<span class='popuptext' id='myPopup'>" 
+        +"<h1>Are you sure?</h1>"
+        +"<button type='yes' class = 'btn btn-success' onClick='showDiv()' style = 'color:white;'>Yes</button>"
+        +"<button type='no' class = 'btn btn-success' onClick='location.href = 'index.html'' style = 'color:white;'>No</button></span>"
+        +"<span class='popuptext1' id='myPopup1'><h2>Submit Resume</h2><label for='resume'>Choose Resume:</label>"
+        +"<select id='resume'><option value='resume1'>R1</option><option value='resume2'>R2</option></select>"
+        +"<button id='EmpAccount' onClick = 'submit()' class='btn btn-success'>Submit</button>"
+        +"<style>span[class=popuptext1]{position: relative;display: inline-block;cursor: pointer; }"
+        +"span[class = popuptext1] { visibility: hidden; width: 160px; background-color: #555; color: #fff;text-align: center;border-radius: 6px;padding: 8px 0; position: fixed; top: 50%; left: 50%; margin-top: -50px; margin-left: -100px; }"
+        +"span[class = popuptext1] .show { visibility: visible;}"
+        +"div[class=popup]{position: relative;display: inline-block;cursor: pointer; }"
+        +".popup .popuptext { visibility: hidden; width: 160px; background-color: #555; color: #fff;text-align: center;border-radius: 6px;padding: 8px 0; position: fixed; top: 50%; left: 50%; margin-top: -50px; margin-left: -100px; }"
+        +".popup .show { visibility: visible;}"
+        +"button[type]{ background-color: #00ff7c} button[type]:hover{background-color: rgb(29, 150, 29)} </style>"
+        +"</div>";
+        jobPosting += "<hr>";
+        document.getElementById("jobPostings").innerHTML = document.getElementById("jobPostings").innerHTML + jobPosting;
+      }
+    }
+  });
+}
+function submit()
+  {
+    var btn = document.getElementById('EmpAccount');
+    btn.addEventListener('click', function() {
+      document.location.href = 'EmployeeAccount.php';
+    });
+  }
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+function showDiv() {
+  document.getElementById('myPopup1').style.visibility = "visible";
+}
 
 
 
