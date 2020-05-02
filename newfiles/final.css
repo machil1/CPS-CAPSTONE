@@ -5,6 +5,7 @@
 form input[class="form-control"]
 {
     float:left !important;
+    width: 95% !important;
 }
 form button[type = "submit"]
 {
