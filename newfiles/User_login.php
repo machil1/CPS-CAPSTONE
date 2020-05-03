@@ -14,21 +14,15 @@ if ($uname != "" && $password != "") {
 
     $sql_EMP = "SELECT EmpID, FName, LName, Email, PhoneNum, count(*) AS cntUser, Password as passEMP FROM User_Employee WHERE Email='" . $uname . "'";
     //$sql_EMPR = "SELECT count(*) AS cntUsers, Password as passEMPR FROM User_Employer WHERE Email='" . $uname . "'";
-
     $EMPresult = mysqli_query($con, $sql_EMP);
-    //$EMPRresult = mysqli_query($con, $sql_EMPR);
 
     $rowz = mysqli_fetch_array($EMPresult);
-    //$row = mysqli_fetch_array($EMPRresult);
 
     $countEMP = $rowz['cntUser'];
-    //$countEMPR = $row['cntUsers'];
     $passEMP = $rowz['passEMP'];
-    //$passEMPR = $row['passEMPR'];
 
     if(password_verify($password, $passEMP)) {
         if ($countEMP > 0) {
-            $cookie_id = $rowz['EmpID'];
             $cookie_Name = $rowz['FName'];
             $FName = $rowz['FName'];
             $LName = $rowz['LName'];
@@ -40,9 +34,18 @@ if ($uname != "" && $password != "") {
             $_SESSION['LName'] = $LName;
             $_SESSION['PhoneNum'] = $PhoneNum;
             $_SESSION['EmpID'] = $EmpID;
-            //setcookie($cookie_n, $cookie_id, time() + (3600), "/");
+            
+            $sql_resume = "SELECT EmpID, Resume FROM Resume WHERE EmpID = $EmpID";
+            $resumeResult = mysqli_query($con,$sql_resume);
+
+            $userResumes = array();
+
+            while($row = mysqli_fetch_array($resumeResult)){
+                    $userResumes[] = $row['Resume'];
+            }
+
             setcookie($cookie_p, $cookie_Name, time() + (3600), "/");
-            echo 0;
+            echo json_encode(array($userResumes));
         }
         /*if ($countEMPR > 0){
             $cookie_id = $row['EmprID'];
@@ -51,7 +54,7 @@ if ($uname != "" && $password != "") {
         }*/
     }
     else{
-        echo "There was an issue with account";
+        echo 0;
     }
 }
-
+?>
