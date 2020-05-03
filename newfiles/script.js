@@ -1,5 +1,6 @@
 src="https://code.jquery.com/jquery-3.4.1.js"
 var JobList = [];
+var myData = JSON.parse(localStorage.getItem("resumes"))
 function jobListing() {
       $.ajax({
         url: 'GetJobPost.php',
@@ -24,7 +25,6 @@ function jobListing() {
             }
             console.log(company);*/
    
-
       for (i = 1; i < JobList.length; i++) {
         var jobPosting = "";
         jobPosting += "<br><b>Company: </b>";
@@ -39,25 +39,33 @@ function jobListing() {
         jobPosting += JobList[i][5] + "<br>";
         jobPosting += "Job Responsibilities: " + JobList[i][6] + "<br>";
         jobPosting += "Job Requirements: " + JobList[i][7] + "</span><br>";
+        if(firstName != null){
         jobPosting += "<div class='popup' onClick='myFunction()'>Apply Now"
         +"<span class='popuptext' id='myPopup'>" 
         +"<h1>Are you sure?</h1>"
         +"<button type='yes' class = 'btn btn-success' onClick='showDiv()' style = 'color:white;'>Yes</button>"
         +"<button type='no' class = 'btn btn-success' onClick='location.href = 'index.html'' style = 'color:white;'>No</button></span>"
-        +"<span class='popuptext1' id='myPopup1'><h2>Submit Resume</h2><label for='resume'>Choose Resume:</label>"
-        +"<select id='resume'><option value='resume1'>R1</option><option value='resume2'>R2</option></select>"
+        + "<span class='popuptext1' id='myPopup1'><h2>Submit Resume</h2><label for='resume'>Choose Resume:</label>"
+        //+"<select id='resume'><option value='resume1'>R1</option><option value='resume2'>R2</option></select>"
+        + "<select id='resume'>";
+        for(let i=0; i<myData[0].length; i++) {
+          jobPosting += "<option value=\'" +myData[0][i]+ "\'>"+myData[0][i]+"</option>";
+        }
+        jobPosting += "</select>"
         +"<button id='EmpAccount' onClick = 'submit()' class='btn btn-success'>Submit</button>"
         +"<style>span[class=popuptext1]{position: relative;display: inline-block;cursor: pointer; }"
-        +"span[class = popuptext1] { visibility: hidden; width: 160px; background-color: #555; color: #fff;text-align: center;border-radius: 6px;padding: 8px 0; position: fixed; top: 50%; left: 50%; margin-top: -50px; margin-left: -100px; }"
+        +"span[class = popuptext1] { visibility: hidden; width: 500px; background-color: #555; color: #fff;text-align: center;border-radius: 6px;padding: 8px 0; position: fixed; top: 50%; left: 50%; margin-top: -50px; margin-left: -75px; }"
         +"span[class = popuptext1] .show { visibility: visible;}"
         +"div[class=popup]{position: relative;display: inline-block;cursor: pointer; }"
-        +".popup .popuptext { visibility: hidden; width: 160px; background-color: #555; color: #fff;text-align: center;border-radius: 6px;padding: 8px 0; position: fixed; top: 50%; left: 50%; margin-top: -50px; margin-left: -100px; }"
+        +".popup .popuptext { visibility: hidden; width: 400px; background-color: #555; color: #fff;text-align: center;border-radius: 6px;padding: 8px 0; position: fixed; top: 50%; left: 50%; margin-top: -50px; margin-left: -80px; }"
         +".popup .show { visibility: visible;}"
         +"button[type]{ background-color: #00ff7c} button[type]:hover{background-color: rgb(29, 150, 29)} </style>"
         +"</div>";
+        }
         jobPosting += "<hr>";
         document.getElementById("jobPostings").innerHTML = document.getElementById("jobPostings").innerHTML + jobPosting;
       }
+      console.log(myData);
     }
   });
 }
@@ -65,7 +73,7 @@ function submit()
   {
     var btn = document.getElementById('EmpAccount');
     btn.addEventListener('click', function() {
-      document.location.href = 'EmployeeAccount.php';
+      window.location.href = 'EmployeeAccount.php';
     });
   }
 function myFunction() {
@@ -75,6 +83,7 @@ function myFunction() {
 function showDiv() {
   document.getElementById('myPopup1').style.visibility = "visible";
 }
+
 
 
 
@@ -120,6 +129,7 @@ $(function () {
 
  
 //Test function to test Database
+var resumes = [];
 $(document).ready(function () {
 
   $("#loginbtn").click(function () {
@@ -133,9 +143,13 @@ $(document).ready(function () {
           type: 'post',
           data: { username: username, password: password },
           success: function (response) {
-            if (response == 0) {
+            if (response != 0) {
               alert("Login Successful!");
               //window.location.href = "EmployeeAccount.html";
+              resumes = JSON.parse(response);
+              resumess = jQuery.makeArray(resumes);
+              localStorage.setItem("resumes", JSON.stringify(resumess));
+              //localStorage.setItem('myDataResumes', JSON.parse(response)); 
               window.location.href = "EmployeeAccount.php";
             }
             else {
@@ -275,9 +289,10 @@ $(function () {
   });
 });
 //FUNCTION TO GET COOKIE FOR WELCOME MESSAGE
+var firstName = "";
 function checkCookie() {
   // Get cookie using our custom function
-  var firstName = getCookie("person");
+  firstName = getCookie("person");
   if(firstName != null) {
     document.getElementById("clearbuttons").innerHTML = " ";
     var welcome = "<ul class='nav nav-pills nav-fill' id='list'>";
@@ -331,7 +346,8 @@ function getCookie(name) {
           success: function (response) {
             if (response == 1) {
               alert("You Logged Out")
-              window.location.reload()
+              localStorage.clear();
+              window.location.reload();
             }
           }
         });
