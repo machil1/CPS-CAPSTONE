@@ -37,9 +37,9 @@ function jobListing() {
         jobPosting += JobList[i][4] + "<br>";
         jobPosting += "Education Level: ";
         jobPosting += JobList[i][5] + "<br>";
-        jobPosting += "Job Responsibilities: " + JobList[i][6] + "<br>";
-        jobPosting += "Job Requirements: " + JobList[i][7] + "</span><br>";
-        if(firstName != null){
+        jobPosting += "<p style='white-space: pre-line'>Job Responsibilities: " + JobList[i][6] + "</p>";
+        jobPosting += "<p style='white-space: pre-line'>Job Requirements: " + JobList[i][7] + "<p></span><br>";
+        if(firstName != null && firstName != 'CyberHire'){
         jobPosting += "<div class='popup' onClick='myFunction()'>Apply Now"
         +"<span class='popuptext' id='myPopup'>" 
         +"<h1>Are you sure?</h1>"
@@ -81,7 +81,6 @@ function myFunction() {
 function showDiv() {
   document.getElementById('myPopup1').style.visibility = "visible";
 }
-
 
 
 $(function () {
@@ -254,7 +253,6 @@ $(function () {
 $(function () {
   $("#addjobbtn").click(function () {
 
-      var Company = $("#Company").val().trim();
       var jobTitle = $("#jobTitle").val().trim();
       var jobDescription = $("#jobDescription").val().trim();
       var location = $("#location").val().trim();
@@ -262,11 +260,11 @@ $(function () {
       var Responsibilities = $("#Responsibilities").val().trim();
       var Requirements = $('#Requirements').val().trim();
 
-      if(Company != ''){
+      if(jobTitle != ''){
         $.ajax({
           url: "addJob.php",
           type: "POST",
-          data: { Company: Company, 
+          data: { 
             jobTitle: jobTitle, 
             jobDescription: jobDescription, 
             location: location, 
