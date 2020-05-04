@@ -10,7 +10,7 @@ include "config.php";
 
 $con = new mysqli($server, $login, $password, $dbname) or die("<br>Cannot connect to Database");
 
-$comp = $_POST['Company'];
+$comp = 'CyberHire';
 $jTitle = $_POST['jobTitle'];
 $jDescrip = $_POST['jobDescription'];
 $location = $_POST['location'];
