@@ -80,6 +80,10 @@
       echo "Address: <br>";
       echo "Phone Number: $PhoneNum";
       ?>
+      <br>
+      <hr>
+      <br>
+      <div id="jobPostingsEmpr"></div>
 
     </div>
     <div class="tab-pane fade" id="resume" role="tabpanel">
@@ -156,8 +160,10 @@
 <script>
     function begin(){
         jobAppl();
+        jobListingEmpr();
     }
     window.onload = begin();
+    
     
 </script>
 
