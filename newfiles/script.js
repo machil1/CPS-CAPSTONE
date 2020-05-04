@@ -25,7 +25,7 @@ function jobListing() {
             }
             console.log(company);*/
    
-      for (i = 1; i < JobList.length; i++) {
+     for (i = 1; i < JobList.length; i++) {
         var jobPosting = "";
         jobPosting += "<br><b>Company: </b>";
         jobPosting += "<b>" + JobList[i][1] + "</b><br>";
@@ -44,23 +44,23 @@ function jobListing() {
         +"<span class='popuptext' id='myPopup'>" 
         +"<h1>Are you sure?</h1>"
         +"<button type='yes' class = 'btn btn-success' onClick='showDiv()' style = 'color:white;'>Yes</button>"
-        +"<button type='no' class = 'btn btn-success' onClick='location.href = 'index.html'' style = 'color:white;'>No</button></span>"
+        +"<button type='no' class = 'btn btn-success' onClick='location.href = 'index.html'' style = 'color:white;'>No</button></span></div>"
         + "<span class='popuptext1' id='myPopup1'><h2>Submit Resume</h2><label for='resume'>Choose Resume:</label>"
         //+"<select id='resume'><option value='resume1'>R1</option><option value='resume2'>R2</option></select>"
-        + "<select id='resume'>";
+        + "<select id='resume'>"
         for(let i=0; i<myData[0].length; i++) {
-          jobPosting += "<option value=\'" +myData[0][i]+ "\'>"+myData[0][i]+"</option>";
+          jobPosting+= "<option value=\'" +myData[0][i]+ "\'>"+myData[0][i]+"</option>"
         }
-        jobPosting += "</select>"
-        +"<button id='EmpAccount' onClick = 'submit()' class='btn btn-success'>Submit</button>"
-        +"<style>span[class=popuptext1]{position: relative;display: inline-block;cursor: pointer; }"
-        +"span[class = popuptext1] { visibility: hidden; width: 500px; background-color: #555; color: #fff;text-align: center;border-radius: 6px;padding: 8px 0; position: fixed; top: 50%; left: 50%; margin-top: -50px; margin-left: -75px; }"
+        jobPosting+= "</select>"
+        jobPosting+="<button type = 'submit' id='EmpAccount' onClick = 'submit()' class='btn btn-success'>Submit</button></span>";
+        jobPosting += "<style>span[class=popuptext1]{position: relative;display: inline-block;cursor: pointer; }"
+        +"span[class = popuptext1] { visibility: hidden; width: 500px; background-color: #555; color: #fff;text-align: center;border-radius: 6px;padding: 8px 0; position: fixed; top: 50%; left: 50%; margin-top: -50px; margin-left: -200px; }"
         +"span[class = popuptext1] .show { visibility: visible;}"
         +"div[class=popup]{position: relative;display: inline-block;cursor: pointer; }"
-        +".popup .popuptext { visibility: hidden; width: 400px; background-color: #555; color: #fff;text-align: center;border-radius: 6px;padding: 8px 0; position: fixed; top: 50%; left: 50%; margin-top: -50px; margin-left: -80px; }"
+        +".popup .popuptext { visibility: hidden; width: 400px; background-color: #555; color: #fff;text-align: center;border-radius: 6px;padding: 8px 0; position: fixed; top: 50%; left: 50%; margin-top: -50px; margin-left: -200px; }"
         +".popup .show { visibility: visible;}"
-        +"button[type]{ background-color: #00ff7c} button[type]:hover{background-color: rgb(29, 150, 29)} </style>"
-        +"</div>";
+        +"button[type]{ background-color: #00ff7c} button[type]:hover{background-color: rgb(29, 150, 29)}"
+        + "</style>";
         }
         jobPosting += "<hr>";
         document.getElementById("jobPostings").innerHTML = document.getElementById("jobPostings").innerHTML + jobPosting;
@@ -69,13 +69,11 @@ function jobListing() {
     }
   });
 }
+
 function submit()
-  {
-    var btn = document.getElementById('EmpAccount');
-    btn.addEventListener('click', function() {
-      window.location.href = 'EmployeeAccount.php';
-    });
-  }
+{
+  window.location = "EmployeeAccount.php";
+}
 function myFunction() {
   var popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
@@ -83,7 +81,6 @@ function myFunction() {
 function showDiv() {
   document.getElementById('myPopup1').style.visibility = "visible";
 }
-
 
 
 
