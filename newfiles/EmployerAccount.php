@@ -123,7 +123,7 @@
     <div class="tab-pane fade" id="job" role="tabpanel">
       <center>
       <h3>Job information</h3>
-      <form action="CreateEmployer.php">
+     <form method ="post">
         <div class="form-group">
           <label for="jobTitle">Title: </label><br>
           <input type="jobTitle" class="form-control" id="jobTitle">
@@ -131,8 +131,7 @@
         <div class="form-group">
           <label for="jobDescription">Description: </label><br>
           <!-- override in css code to format the size of text box-->
-          <input type = "jobDescription" class="form-control" id="jobDescription" >
-          <!--<textarea rows= "5" cols = "50" class="form-control" id="jobDescription"style = "display:block !important; margin-left:auto; margin-right:auto; width:auto !important" ></textarea>-->
+          <textarea rows= "5" cols = "50" class="form-control" id="jobDescription"style = "display:block !important;" ></textarea>
         </div>
         <div class="form-group">
           <label for="location">Location: </label><br>
@@ -144,13 +143,13 @@
         </div>
         <div class="form-group">
           <label for="Responsibilities">Responsibilities: </label><br>
-          <input type="Responsibilities" class="form-control" id="Responsibilities">
+          <textarea rows= "5" cols = "50" class="form-control" id="Responsibilities"style = "display:block !important;" ></textarea>
         </div>
         <div class="form-group">
           <label for="Requirements">Requirements: </label><br>
-          <input type="Requirements" class="form-control" id="Requirements">
+          <textarea rows= "5" cols = "50" class="form-control" id="Requirements"style = "display:block !important;" ></textarea>
         </div><br>
-        <button class="btn btn-success" id = "myFile">Submit</button>
+        <button class="btn btn-success" id = "addjobbtn">Submit</button>
       </form>
       </center>
     </div>
