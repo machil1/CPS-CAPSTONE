@@ -468,3 +468,52 @@ $(document).ready(function(){
   $('#list a[href="#accHome"]').tab('show') 
         
 });
+
+
+function jobListingEmpr() {
+      $.ajax({
+        url: 'GetJobPost.php',
+        type: 'POST',
+        datatype: 'JSON',
+        success: function (JobPost) {
+            JobList1 = JSON.parse(JobPost);
+            JobList = jQuery.makeArray( JobList1 );
+            console.log(JobList);
+
+            /*var company = [];
+            var title = [];
+            var descrip = [];
+            var location = [];
+            var edulvl = [];
+            for (j = 1; j < JobList.length; j++){
+                company.push(JobList[j][1]);
+                title.push(JobList[j][2]);
+                descrip.push(JobList[j][3]);
+                location.push(JobList[j][4]);
+                edulvl.push(JobList[j][5]);
+            }
+            console.log(company);*/
+jobTitleArr = [];
+     for (i = 1; i < JobList.length; i++) {
+        var jobPosting = "";
+        jobPosting += "<br><b>Company: </b>";
+        jobPosting += "<b>" + JobList[i][1] + "</b><br>";
+        //jobPosting += "<label id='title' for=\'"+JobList[i][2]+"\'>Title</label>";
+        jobPosting += " Title: ";
+        jobPosting += "<label id='title' for=\'"+JobList[i][2]+"\'>"+JobList[i][2]+"</label>";
+        jobPosting += " <p style='white-space: pre-line'>Description: ";
+        jobPosting += JobList[i][3] + "</p>";
+        jobPosting += " Location: ";
+        jobPosting += JobList[i][4] + "<br>";
+        jobPosting += "Education Level: ";
+        jobPosting += JobList[i][5] + "<br>";
+        jobPosting += "<p style='white-space: pre-line'>Job Responsibilities: " + JobList[i][6] + "</p>";
+        jobPosting += "<p style='white-space: pre-line'>Job Requirements: " + JobList[i][7] + "<p></span><br>";
+        jobPosting += "<div><button class ='btn btn-success' id='edit'>Edit</button>"
+        jobPosting += "<button class ='btn btn-success' id='delete'>Delete</button></div>"
+        jobPosting += "<hr>";
+        document.getElementById("jobPostingsEmpr").innerHTML = document.getElementById("jobPostingsEmpr").innerHTML + jobPosting;
+      }
+    }
+  });
+}
