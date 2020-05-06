@@ -1,0 +1,191 @@
+/*Code for index.html Search bar/Logo image/ and color of background*/
+
+/*Code for the search bar */
+
+form input[class="form-control"]
+{
+    float: left !important;
+    width: 95% !important;
+}
+form button[type = "submit"]
+{
+    text-emphasis: inline-block !important;
+    width:5% !important;
+}
+
+/* CSS for Cyber hire picture */
+.Container img{
+    float:left;
+}
+/* Setting up the color of the header */
+.Container {
+    background-color: black;
+    padding: 5px;
+}
+.main {
+    background-color: black;
+}
+hr{
+    color: black;
+}
+
+/*Index page buttons color */
+.Container button{
+    background-color: #00ff7c;
+}
+.Container button:hover{
+    background-color: rgb(29, 150, 29);
+}
+/*Search Bar */
+/*
+.form-control
+{
+    width: 40% !important;
+}
+*/
+
+/* Code for login email password text boxes and bolding */
+ .form-group{
+     width: 40% !important;
+     text-align: center;
+ }
+ .form-group label[for = email],
+ .form-group label[for = pwd]
+ {
+     font-weight: bold !important;
+ }
+
+/*Code for changing the color of the submit button */
+form button[type = submit] 
+{
+    float: inline-block;
+    background-color: #00ff7c;
+}
+form button[type = submit]:hover{
+    background-color: rgb(29, 150, 29);
+}
+
+/* Login Button CSS */
+.btn input[type=button] {
+    float: right;
+    background-color: #00ff7c;
+    border: 1px solid white;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+    width: auto;
+}
+
+/* Create Account file Styling */
+.header {
+    background-color: black;
+    padding: 5px;
+}
+.clearfix button{
+    background-color: #00ff7c;
+
+}
+.clearfix button:hover{
+    background-color: rgb(29, 150, 29) !important;
+}
+.clearfix button:focus{
+    background-color: rgb(29, 150, 29) !important;
+}
+.Container label[for = Account]
+{
+    text-align: center !important;
+}
+
+/* Full-width input fields */
+.container input[type=text],
+.container input[type=password] {
+  width: 40%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text],
+input[type=password]{
+  width: auto;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+  outline: none;
+}
+
+/* Code for Employee Employer Account */
+.navbar-inverse{
+    padding: 5px;
+}
+.navbar-inverse a{
+    transition: .5;
+    background-color: #00ff7c !important ;
+    color:white !important;
+}
+.navbar-inverse a:hover{
+    transition: .5;
+    background-color: rgb(29, 150, 29) !important;
+    color:white !important;
+}
+.navbar-inverse a:focus{
+    transition: .5;
+    background-color: rgb(29, 150, 29) !important;
+}
+.navbar-inverse ul{
+    float: right;
+}
+button[type = submit] 
+{
+    background-color: #00ff7c;
+}
+button[type = submit]:hover{
+    background-color: rgb(29, 150, 29);
+}
+/* Formatting for employer/employee add a job/account info tab buttons */
+#myFile {
+    background-color: #00ff7c
+}
+#myFile:hover {
+    background-color: rgb(29, 150, 29)
+}
+/*
+.navbar-top{
+    width:90% !important;
+}
+*/
+
+/* Code for show more show less in Script */
+/*
+.showmore {
+    font-size: 1.1em;
+    margin-top: 1.5em;
+  }
+  
+  .showmore .more, .showmore.show .dots {
+    display: none;
+  }
+  
+  .showmore.show .more {
+    display: inline;
+  }
+  
+  .showmore a {
+    cursor: pointer;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    font-weight: bold;
+  }
+  */
+  /*Code for Welcome message in employer/employee*/
+  .nav b {
+      color:white !important;
+  }

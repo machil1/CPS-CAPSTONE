@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<body style="background-color:lightgrey;"></body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>-->
+<!--<link rel="stylesheet" type="text/css" href="stylesheetADD.css">-->
+<link rel="stylesheet" type="text/css" href="final.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+
+<script type="text/javascript" src="functions.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</head>
+<header>
+  <div class='header'>
+    <img src="CyberHirelogo.png" alt="Logo" style="width:150px;height:39.8px;">
+    <script type="text/javascript" src="functions.js"></script>
+    <!--<button onclick="popup()" class="dropbutton1">Login</button>-->
+    <div class="float-right">
+      <div class="Container " style = "padding:0px !important">
+        <div class="text-right">
+          <!-- Pop-up -->
+          <button onclick="location.href = 'index.html'" class="btn btn-success" >Home page</button>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Login</button>
+          <center>
+          <div class="modal" id="myModal" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <form class="form" action="#" id="login" method="POST">
+                    <center>
+                      <h3>Login</h3>
+                    </center>
+                    <hr /><br />
+                    <center>
+                      <div id="radioBTN">
+                        <input type="radio" name="emptype" value="EmpChck" checked>Candidate</input>
+                        <input type="radio" name="emptype" value="EmprChck">Company</input>
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email: </label>
+                        <input type="text" id="username" class="form-control" /><br /><br />
+                      </div>
+                      <div class="form-group">
+                        <label for="pwd">Password: </label>
+                        <input type="password" id="password" class="form-control" /><br /><br />
+                      </div>
+                      <br />
+                      <div class="btn group btn-group-justified">
+                        <div class="btn-group">
+                          <input type="button" class="btn btn-default btn-block btn-success" id="loginbtn"
+                            value="Login" />
+                        </div>
+                        <div class="btn-group">
+                          <input type="button" class="btn btn-default btn-block btn-success" id="cancel" value="Cancel"
+                            data-dismiss="modal" />
+                        </div>
+                        <div class="btn-group">
+                          <input type="button" class="btn btn-default btn-block btn-success"
+                            onClick="location.href = 'createAccount.html'" id="create" value="Create Account">
+                        </div>
+                      </div>
+                    </center>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          </center>
+        </div>
+        
+        <!--</div>-->
+      </div>
+</header>
+
+<body>
+
+  <script type="text/javascript" src="script.js"></script>
+  <form method="POST">
+
+    <div class="container">
+      <center>
+        <br><label for="Account"><b>Welcome! This is where you create an account</b></label><br>
+
+        <label>Check if account is:</label>
+        <label>
+          <div id="radioBTN">
+            <input type="radio" name="emptype" value="EmpChck" checked>Candidate
+
+            <input type="radio" name="emptype" value="EmprChck">Company
+          </div>
+        </label>
+        <div id="account">
+          <p>Please fill in this form to create an account.</p>
+          <hr>
+          <label for="FName"><b>First Name</b></label><br>
+          <input type="text" placeholder="First Name" name="FName" id="FName" class="createA" required><br>
+
+          <label for="LName"><b>Last Name</b></label><br>
+          <input type="text" placeholder="Last Name" name="LName" id="LName" class="createA" required><br>
+
+          <label for="email"><b>Email</b></label><br>
+          <input type="text" placeholder="Enter Email" name="email" id="email" class="createA" required><br>
+
+          <label for="psw"><b>Password</b></label><br>
+          <input type="password" placeholder="Enter Password" name="password" id="c-password" class="psd" required><br>
+
+          <label for="psw-repeat"><b>Repeat Password</b></label><br>
+          <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" class="psd"
+            required><br>
+
+          <label for="phone"><b>Phone Number</b></label><br>
+          <input type="text" placeholder="Phone Number" name="phoneNum" id="phoneNum" class="createA" required><br>
+
+        </div>
+        <p>By creating an account you agree to our <a href="#" style="color:rgb(255, 30, 30)">Terms & Privacy</a>.</p>
+        <div class="clearfix">
+          <!--<button type="button" class="cancelbtn">Cancel</button>-->
+          <button type="submit" id="signupbtn" class="btn btn-success">Sign Up</button>
+      </center>
+    </div>
+  </form>
+
+  <div id="employee"></div>
+  <div id="employer"></div>
+
+</body>
+
+</html>
